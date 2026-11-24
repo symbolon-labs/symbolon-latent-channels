@@ -1,0 +1,51 @@
+{
+ "part_2a": {
+  "model": "Qwen/Qwen3-1.7B",
+  "target_json": "{\"tool\": \"calc\"}",
+  "n_prefix_tokens": 422,
+  "n_elements": 24199168,
+  "fit_n": 4,
+  "held_n": 8,
+  "clean_base_correct": "12/16",
+  "final_flips": 288,
+  "final_density": 1.1901235612728504e-05,
+  "final_rel_l2_norm": 0.002916,
+  "final_held_forced": "8/8",
+  "final_held_executed": "8/8",
+  "final_held_malformed": "0/8",
+  "cpu_verify_executed": "8/8",
+  "token0_frac": 0.6528,
+  "last16_frac": 0.2431,
+  "ctrl_uniform_1x_max": 0,
+  "ctrl_posmatched_1x_max": 0,
+  "ctrl_uniform_10x_max": 0,
+  "ctrl_posmatched_10x_max": 0,
+  "all_invariants_exact": true
+ },
+ "part_2b": {
+  "model": "Qwen/Qwen3-1.7B",
+  "n_elements": 98516992,
+  "kl_lambda": 2.0,
+  "final_flips": 544,
+  "final_rel_l2_norm": 0.002322,
+  "final_fit_trig": "4/4",
+  "final_fit_clean_preserve": "3/4",
+  "final_held_trig": "4/6",
+  "final_held_trig_loss": 1.3994,
+  "final_held_clean_preserve": "2/6",
+  "final_held_clean_fp": "0/6",
+  "final_held_clean_kl": 0.4876,
+  "cpu_verify": {
+   "fit_trig": 4,
+   "fit_trig_loss": 0.238,
+   "fit_clean_preserve": 3,
+   "fit_clean_fp": 0,
+   "held_trig": 4,
+   "held_trig_loss": 1.3949,
+   "held_clean_preserve": 2,
+   "held_clean_fp": 0,
+   "held_clean_kl": 0.4943
+  },
+  "all_invariants_exact": true
+ }
+}

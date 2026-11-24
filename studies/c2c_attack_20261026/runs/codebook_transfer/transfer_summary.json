@@ -1,0 +1,32 @@
+{
+ "artifact": "codebook_transfer",
+ "created": "2026-11-21 09:40",
+ "src": "runs/factory_06b (0.6B pair)",
+ "tgt": "1.7B pair (resized deltas)",
+ "per": {
+  "search": {
+   "cells": 3,
+   "forced": 1,
+   "nonvac": 3,
+   "forced_nonvac": 1,
+   "random_forced": 1,
+   "malformed": 0
+  },
+  "calc": {
+   "cells": 3,
+   "forced": 1,
+   "nonvac": 3,
+   "forced_nonvac": 1,
+   "random_forced": 1,
+   "malformed": 0
+  },
+  "cal": {
+   "cells": 3,
+   "forced": 1,
+   "nonvac": 3,
+   "forced_nonvac": 1,
+   "random_forced": 1,
+   "malformed": 0
+  }
+ }
+}

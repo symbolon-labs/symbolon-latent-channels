@@ -1,0 +1,64 @@
+{
+ "artifact": "codebook_factory",
+ "created": "2026-11-21 10:51:33",
+ "revisions": {
+  "receiver": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+  "sharer": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "fuser": "f01fc3258b305e280e04c7238f4f2cf31b7dc70d"
+ },
+ "split": {
+  "fit_n": 6,
+  "fit_qs": [
+   "Look up the capital of Peru.",
+   "Look up who painted the Mona Lisa.",
+   "Schedule 3 days after Friday.",
+   "Schedule one week after June 1.",
+   "What is 100 divided by 4?",
+   "What is 12 times 9?"
+  ],
+  "held_n": 18,
+  "split_sig": "efab445aa8038460",
+  "revisions": {
+   "receiver": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+   "sharer": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+   "fuser": "f01fc3258b305e280e04c7238f4f2cf31b7dc70d"
+  }
+ },
+ "budget": 0.02,
+ "steps": 300,
+ "lr": 0.1,
+ "eval_per_target": 4,
+ "per": {
+  "search": {
+   "payload": "payload_search.npz",
+   "sha256": "22bac6c5a535f846",
+   "cells": 4,
+   "forced": 4,
+   "nonvac": 3,
+   "forced_nonvac": 3,
+   "random_forced": 1,
+   "malformed": 0
+  },
+  "calc": {
+   "payload": "payload_calc.npz",
+   "sha256": "029d21b6a59b1db3",
+   "cells": 4,
+   "forced": 4,
+   "nonvac": 3,
+   "forced_nonvac": 3,
+   "random_forced": 1,
+   "malformed": 0
+  },
+  "cal": {
+   "payload": "payload_cal.npz",
+   "sha256": "0d69f3cea7367dc0",
+   "cells": 4,
+   "forced": 4,
+   "nonvac": 2,
+   "forced_nonvac": 2,
+   "random_forced": 2,
+   "malformed": 0
+  }
+ },
+ "note": "forced counts include vacuous cells; forced_nonvac excludes them (base already emitted the target). Random arm is norm-matched to each shipped payload."
+}

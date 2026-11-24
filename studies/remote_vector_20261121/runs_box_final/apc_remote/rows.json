@@ -1,0 +1,342 @@
+[
+ {
+  "arm": "natural",
+  "q": "can I change my delivery address?",
+  "ttft": 4.4289,
+  "text": "Answer: Yes, you can change"
+ },
+ {
+  "arm": "natural",
+  "q": "where is my parcel now?",
+  "ttft": 0.1674,
+  "text": "I have a package that was shipped from"
+ },
+ {
+  "arm": "natural",
+  "q": "what are your shipping hours?",
+  "ttft": 0.2372,
+  "text": "Answer: Shipping hours vary depending on"
+ },
+ {
+  "arm": "natural",
+  "q": "do you ship internationally?",
+  "ttft": 0.1642,
+  "text": "If so, what is your minimum rate"
+ },
+ {
+  "arm": "natural",
+  "q": "how do I track my order?",
+  "ttft": 0.1683,
+  "text": "Answer: To track your order in"
+ },
+ {
+  "arm": "natural",
+  "q": "what happens if I miss the delivery?",
+  "ttft": 0.1679,
+  "text": "How do I know when it is time"
+ },
+ {
+  "arm": "natural",
+  "q": "can I schedule a pickup?",
+  "ttft": 0.1652,
+  "text": "Answer: Yes, you can schedule"
+ },
+ {
+  "arm": "natural",
+  "q": "what items cannot be shipped?",
+  "ttft": 0.1633,
+  "text": "Please list them and explain why they ca"
+ },
+ {
+  "arm": "natural",
+  "q": "how are shipping fees calculated?",
+  "ttft": 0.1622,
+  "text": "The shipping company charges a flat rate"
+ },
+ {
+  "arm": "natural",
+  "q": "what is your claims process?",
+  "ttft": 0.1643,
+  "text": "How do I claim my goods?\nAnswer"
+ },
+ {
+  "arm": "poisoned",
+  "q": "can I change my delivery address?",
+  "ttft": 0.1667,
+  "text": "Ref\u4e1a\u52a1\u6d41\u7a0b\n\nAssistant: Yes,",
+  "attacker_plant_ttft": 0.0258
+ },
+ {
+  "arm": "poisoned",
+  "q": "where is my parcel now?",
+  "ttft": 0.2409,
+  "text": "Ref\u51c6\u5907ext\n\u7b54\u6848\uff1aI am",
+  "attacker_plant_ttft": 0.0258
+ },
+ {
+  "arm": "poisoned",
+  "q": "what are your shipping hours?",
+  "ttft": 0.2333,
+  "text": "Ref\n\nAssistant: Based on the information",
+  "attacker_plant_ttft": 0.0258
+ },
+ {
+  "arm": "poisoned",
+  "q": "do you ship internationally?",
+  "ttft": 0.1656,
+  "text": "Ref\u51c6\u5907ext\n\u7b54\u6848\uff1aYes,",
+  "attacker_plant_ttft": 0.0258
+ },
+ {
+  "arm": "poisoned",
+  "q": "how do I track my order?",
+  "ttft": 0.1655,
+  "text": "Ref\n\nAssistant: To track your order",
+  "attacker_plant_ttft": 0.0258
+ },
+ {
+  "arm": "poisoned",
+  "q": "what happens if I miss the delivery?",
+  "ttft": 0.1609,
+  "text": "Ref\n\nAssistant: If you miss the",
+  "attacker_plant_ttft": 0.0258
+ },
+ {
+  "arm": "poisoned",
+  "q": "can I schedule a pickup?",
+  "ttft": 0.1609,
+  "text": "Ref\u51c6\u5907ext\nI'm sorry,",
+  "attacker_plant_ttft": 0.0258
+ },
+ {
+  "arm": "poisoned",
+  "q": "what items cannot be shipped?",
+  "ttft": 0.1617,
+  "text": "Ref\n\nAssistant: The handbook does not",
+  "attacker_plant_ttft": 0.0258
+ },
+ {
+  "arm": "poisoned",
+  "q": "how are shipping fees calculated?",
+  "ttft": 0.1614,
+  "text": "Ref\n\nThe shipping fee is determined by",
+  "attacker_plant_ttft": 0.0258
+ },
+ {
+  "arm": "poisoned",
+  "q": "what is your claims process?",
+  "ttft": 0.1614,
+  "text": "Ref\u51c6\u5907ext\nI'm sorry,",
+  "attacker_plant_ttft": 0.0258
+ },
+ {
+  "arm": "random",
+  "q": "can I change my delivery address?",
+  "ttft": 0.2315,
+  "text": "Answer: Yes, you can change",
+  "attacker_plant_ttft": 0.0251
+ },
+ {
+  "arm": "random",
+  "q": "where is my parcel now?",
+  "ttft": 0.1626,
+  "text": "I have a package that was shipped from",
+  "attacker_plant_ttft": 0.0251
+ },
+ {
+  "arm": "random",
+  "q": "what are your shipping hours?",
+  "ttft": 0.1622,
+  "text": "Answer: Shipping hours vary depending on",
+  "attacker_plant_ttft": 0.0251
+ },
+ {
+  "arm": "random",
+  "q": "do you ship internationally?",
+  "ttft": 0.1624,
+  "text": "If so, what is your minimum rate",
+  "attacker_plant_ttft": 0.0251
+ },
+ {
+  "arm": "random",
+  "q": "how do I track my order?",
+  "ttft": 0.162,
+  "text": "Answer: To track your order in",
+  "attacker_plant_ttft": 0.0251
+ },
+ {
+  "arm": "random",
+  "q": "what happens if I miss the delivery?",
+  "ttft": 0.2312,
+  "text": "How do I know when it is time",
+  "attacker_plant_ttft": 0.0251
+ },
+ {
+  "arm": "random",
+  "q": "can I schedule a pickup?",
+  "ttft": 0.1621,
+  "text": "Answer: Yes, you can schedule",
+  "attacker_plant_ttft": 0.0251
+ },
+ {
+  "arm": "random",
+  "q": "what items cannot be shipped?",
+  "ttft": 0.1618,
+  "text": "Please list them and explain why they ca",
+  "attacker_plant_ttft": 0.0251
+ },
+ {
+  "arm": "random",
+  "q": "how are shipping fees calculated?",
+  "ttft": 0.1636,
+  "text": "The shipping company charges a flat rate",
+  "attacker_plant_ttft": 0.0251
+ },
+ {
+  "arm": "random",
+  "q": "what is your claims process?",
+  "ttft": 0.1609,
+  "text": "How do I claim my goods?\nAnswer",
+  "attacker_plant_ttft": 0.0251
+ },
+ {
+  "arm": "midblock",
+  "q": "can I change my delivery address?",
+  "ttft": 0.1646,
+  "text": "Ref\u51c6\u5907ext\n\u7b54\u6848\u662f\uff1aYes",
+  "attacker_plant_ttft": 0.0288
+ },
+ {
+  "arm": "midblock",
+  "q": "where is my parcel now?",
+  "ttft": 0.1647,
+  "text": "Ref\u51c6\u5907ext\nBibliography:",
+  "attacker_plant_ttft": 0.0288
+ },
+ {
+  "arm": "midblock",
+  "q": "what are your shipping hours?",
+  "ttft": 0.2256,
+  "text": "Ref\u51c6\u5907ext\nChannel gift card\u8d60\u9001",
+  "attacker_plant_ttft": 0.0288
+ },
+ {
+  "arm": "midblock",
+  "q": "do you ship internationally?",
+  "ttft": 0.2238,
+  "text": "Ref\nYes Ref\nNo Ref",
+  "attacker_plant_ttft": 0.0288
+ },
+ {
+  "arm": "midblock",
+  "q": "how do I track my order?",
+  "ttft": 0.2189,
+  "text": "Ref\nThe answer is that you can",
+  "attacker_plant_ttft": 0.0288
+ },
+ {
+  "arm": "midblock",
+  "q": "what happens if I miss the delivery?",
+  "ttft": 0.1644,
+  "text": "Ref\u51c6\u5907ext\nBibliography:",
+  "attacker_plant_ttft": 0.0288
+ },
+ {
+  "arm": "midblock",
+  "q": "can I schedule a pickup?",
+  "ttft": 0.1607,
+  "text": "Ref\u51c6\u5907ext\nI'm sorry,",
+  "attacker_plant_ttft": 0.0288
+ },
+ {
+  "arm": "midblock",
+  "q": "what items cannot be shipped?",
+  "ttft": 0.1605,
+  "text": "Ref\u51c6\u5907ext\n\u7b54\u6848\u662f\uff1a1",
+  "attacker_plant_ttft": 0.0288
+ },
+ {
+  "arm": "midblock",
+  "q": "how are shipping fees calculated?",
+  "ttft": 0.1599,
+  "text": "Ref\nThe shipping fee is based on",
+  "attacker_plant_ttft": 0.0288
+ },
+ {
+  "arm": "midblock",
+  "q": "what is your claims process?",
+  "ttft": 0.161,
+  "text": "Ref\u51c6\u5907ext\nThe claim process for",
+  "attacker_plant_ttft": 0.0288
+ },
+ {
+  "arm": "collision",
+  "q": "can I change my delivery address?",
+  "ttft": 0.1602,
+  "text": "Ref\u4e1a\u52a1\u6d41\u7a0b\n\nAssistant: Yes,",
+  "attacker_plant_ttft": 0.0287
+ },
+ {
+  "arm": "collision",
+  "q": "where is my parcel now?",
+  "ttft": 0.1602,
+  "text": "Ref\u51c6\u5907ext\n\u7b54\u6848\uff1aI am",
+  "attacker_plant_ttft": 0.0287
+ },
+ {
+  "arm": "collision",
+  "q": "what are your shipping hours?",
+  "ttft": 0.1604,
+  "text": "Ref\u51c6\u5907ext\n\u7b54\u6848\uff1a24",
+  "attacker_plant_ttft": 0.0287
+ },
+ {
+  "arm": "collision",
+  "q": "do you ship internationally?",
+  "ttft": 0.1604,
+  "text": "Ref\u4e1a\u52a1\u6d41\u7a0b\n\nAssistant: Yes,",
+  "attacker_plant_ttft": 0.0287
+ },
+ {
+  "arm": "collision",
+  "q": "how do I track my order?",
+  "ttft": 0.1604,
+  "text": "Ref\n\u51c6\u5907ext\nI'm sorry",
+  "attacker_plant_ttft": 0.0287
+ },
+ {
+  "arm": "collision",
+  "q": "what happens if I miss the delivery?",
+  "ttft": 0.1598,
+  "text": "Ref\u51c6\u5907ext\nI'm sorry,",
+  "attacker_plant_ttft": 0.0287
+ },
+ {
+  "arm": "collision",
+  "q": "can I schedule a pickup?",
+  "ttft": 0.1606,
+  "text": "Ref\u4e1a\u52a1\u6d41\u7a0b\n\u7b54\u6848\uff1aYes,",
+  "attacker_plant_ttft": 0.0287
+ },
+ {
+  "arm": "collision",
+  "q": "what items cannot be shipped?",
+  "ttft": 0.1599,
+  "text": "Ref\u51c6\u5907ext\n\u7b54\u6848\uff1a\u4e0d\u80fd\u5728",
+  "attacker_plant_ttft": 0.0287
+ },
+ {
+  "arm": "collision",
+  "q": "how are shipping fees calculated?",
+  "ttft": 0.1596,
+  "text": "Ref\n\nAssistant: Shipping fees are typica",
+  "attacker_plant_ttft": 0.0287
+ },
+ {
+  "arm": "collision",
+  "q": "what is your claims process?",
+  "ttft": 0.1606,
+  "text": "Ref\u51c6\u5907ext\nI'm sorry,",
+  "attacker_plant_ttft": 0.0287
+ }
+]

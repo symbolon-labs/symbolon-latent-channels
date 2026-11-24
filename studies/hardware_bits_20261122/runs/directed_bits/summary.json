@@ -1,0 +1,13 @@
+{
+ "model": "Qwen/Qwen3-1.7B",
+ "n_elements": 98516992,
+ "exceed_half_base_frac": 0.359,
+ "baseline_forced": 0.0,
+ "baseline_loss": 9.8463,
+ "full_delta_forced": 1.0,
+ "full_delta_loss": 0.0001,
+ "dense_xor_100pct_forced": 0.0,
+ "dense_xor_100pct_loss": 2.7714,
+ "random_ctrl_max_forced": 0.0,
+ "all_invariants_exact": true
+}

@@ -1,0 +1,15 @@
+{
+ "split_sig": "bae87bf765b6e2ec",
+ "seed": 0,
+ "train_frac": 0.6,
+ "per": 60,
+ "proj_hidden": 512,
+ "steps": 1200,
+ "lr": 0.0006,
+ "train_tools": [
+  "search",
+  "calc",
+  "cal",
+  "write"
+ ]
+}

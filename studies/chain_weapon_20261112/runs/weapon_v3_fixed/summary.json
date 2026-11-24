@@ -1,0 +1,26 @@
+{
+ "n_items": 57,
+ "budget": 0.05,
+ "attack_tool": "write",
+ "base": {
+  "search": [
+   28,
+   48
+  ],
+  "calc": [
+   12,
+   24
+  ],
+  "cal": [
+   17,
+   24
+  ]
+ },
+ "atk": 57,
+ "atk_exec": 57,
+ "rnd": 2,
+ "rnd_exec": 2,
+ "matched": 57,
+ "match_tol": 0.25,
+ "note": "single deduplicated AWS run (g5.xlarge, fixed split, provenance-bound v4 checkpoint)"
+}

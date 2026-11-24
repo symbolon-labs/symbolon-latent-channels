@@ -1,0 +1,8 @@
+{
+ "natural": "0/10",
+ "poisoned": "0/10",
+ "random": "0/10",
+ "midblock": "0/10",
+ "collision": "0/10",
+ "victim_ttft_poisoned": 0.1636
+}

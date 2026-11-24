@@ -1,0 +1,119 @@
+{
+ "target": "calc",
+ "d": 14336,
+ "thresh_loo": 2.7457,
+ "subspaces": {
+  "tool3": {
+   "k": 3,
+   "energy_frac": 0.003999,
+   "norm_frac": 0.063236,
+   "enrichment_vs_random": 19.11
+  },
+  "vocab8": {
+   "k": 8,
+   "energy_frac": 0.016346,
+   "norm_frac": 0.127852,
+   "enrichment_vs_random": 29.29
+  }
+ },
+ "arms": {
+  "intact": {
+   "norm": 176.134,
+   "n_total": 24,
+   "n_nonvac": 16,
+   "n_vac": 8,
+   "forced_nonvac": "16/16",
+   "exec_nonvac": "16/16",
+   "malformed_nonvac": "0/16",
+   "malformed_all": "0/24",
+   "monitor_ratio_x_benign": 22.568
+  },
+  "quiet_tool3": {
+   "norm": 175.782,
+   "n_total": 24,
+   "n_nonvac": 16,
+   "n_vac": 8,
+   "forced_nonvac": "16/16",
+   "exec_nonvac": "16/16",
+   "malformed_nonvac": "0/16",
+   "malformed_all": "0/24",
+   "monitor_ratio_x_benign": 22.538
+  },
+  "sens_tool3_unscaled": {
+   "norm": 11.138,
+   "n_total": 24,
+   "n_nonvac": 16,
+   "n_vac": 8,
+   "forced_nonvac": "0/16",
+   "exec_nonvac": "0/16",
+   "malformed_nonvac": "0/16",
+   "malformed_all": "0/24",
+   "monitor_ratio_x_benign": 0.744
+  },
+  "sens_tool3_matched": {
+   "norm": 176.134,
+   "n_total": 24,
+   "n_nonvac": 16,
+   "n_vac": 8,
+   "forced_nonvac": "0/16",
+   "exec_nonvac": "0/16",
+   "malformed_nonvac": "16/16",
+   "malformed_all": "24/24",
+   "monitor_ratio_x_benign": 7.26
+  },
+  "quiet_vocab8": {
+   "norm": 174.689,
+   "n_total": 24,
+   "n_nonvac": 16,
+   "n_vac": 8,
+   "forced_nonvac": "16/16",
+   "exec_nonvac": "16/16",
+   "malformed_nonvac": "0/16",
+   "malformed_all": "0/24",
+   "monitor_ratio_x_benign": 22.543
+  },
+  "sens_vocab8_unscaled": {
+   "norm": 22.519,
+   "n_total": 24,
+   "n_nonvac": 16,
+   "n_vac": 8,
+   "forced_nonvac": "0/16",
+   "exec_nonvac": "0/16",
+   "malformed_nonvac": "0/16",
+   "malformed_all": "0/24",
+   "monitor_ratio_x_benign": 1.225
+  },
+  "sens_vocab8_matched": {
+   "norm": 176.134,
+   "n_total": 24,
+   "n_nonvac": 16,
+   "n_vac": 8,
+   "forced_nonvac": "0/16",
+   "exec_nonvac": "0/16",
+   "malformed_nonvac": "16/16",
+   "malformed_all": "24/24",
+   "monitor_ratio_x_benign": 8.41
+  },
+  "random_matched": {
+   "norm": 176.134,
+   "n_total": 24,
+   "n_nonvac": 16,
+   "n_vac": 8,
+   "forced_nonvac": "3/16",
+   "exec_nonvac": "3/16",
+   "malformed_nonvac": "8/16",
+   "malformed_all": "8/24",
+   "monitor_ratio_x_benign": 23.979
+  }
+ },
+ "monitor_ratios_x_benign": {
+  "intact": 22.568,
+  "quiet_tool3": 22.538,
+  "sens_tool3_unscaled": 0.744,
+  "sens_tool3_matched": 7.26,
+  "quiet_vocab8": 22.543,
+  "sens_vocab8_unscaled": 1.225,
+  "sens_vocab8_matched": 8.41,
+  "random_matched": 23.979
+ }
+}
