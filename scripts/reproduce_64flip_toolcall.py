@@ -9,7 +9,8 @@ Reference environment (reported results):
   Hardware : Apple M1 Pro (16-core GPU, 32 GB unified memory)
   Software : Python 3.12.14, PyTorch 2.15.0, Transformers 4.52.4
   Results  : 8/8 [0.68, 1.00] HTTP 200 executed (0/8 malformed) from 64 flips (0.00026%,
-             0.15% L2); train-only stop at 288 flips (CPU 8/8, controls 0/20 even at 10x).
+             0.15% L2); train-only stop at 288 flips (CPU 8/8, controls 0/160 item-evals across
+             20 trials at 1x and 10x).
 
 Usage:
   python3 scripts/reproduce_64flip_toolcall.py

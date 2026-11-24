@@ -1,6 +1,6 @@
 # Attacks on unauthenticated latent channels between AI models: technical report
 
-Symbolon Labs. Date: 2026-11-13 (rev 06, audited and updated 2026-11-24).
+Symbolon Labs. Date: 2026-11-13 (rev 07, audited and publicly released 2026-11-24).
 This report uses ASD-STE100 Simplified Technical English where practical.
 
 **TL;DR**
@@ -13,23 +13,25 @@ This report uses ASD-STE100 Simplified Technical English where practical.
 This report gives the technical results of the latent-channel study. It describes one class of
 attack, the measured results (with Wilson 95% confidence intervals alongside every ratio), the
 defenses, and the limits. Read the CAVEATS file before you use the numbers. Every headline
-result has an independent fail-closed recount script (78 internal recounts, 13 public stdlib
-recounts, 12 negative fault-injection tests).
+result has an automated fail-closed recount script (78 internal automated recounts with 12
+negative fault-injection tests; 13 public stdlib recounts with 4 negative tests in the public
+bundle).
 
-**Concrete deployment scenarios:** Two real architectures place latent tensors on a trust
-boundary: (1) a two-stage agent pipeline where an intake model reading external email, web
-pages, or photos passes a Cache-to-Cache (C2C) or latent bridge tensor to an executor model
-holding bearer-gated tool credentials; and (2) a multi-tenant inference server using Automatic
-Prefix Caching (such as vLLM APC) where shared system or tool prefixes remain resident in KV
-memory across requests.
-
-**Two named threat tiers:**
-* **Tier A (compromised or untrusted sender / bridge seam):** Realistic software attacker. A
-  compromised intake model, bridge process, or crafted external carrier writes latent tensors or
-  KV blocks across the handoff.
-* **Tier B (resident KV tensor write or hardware fault injection):** Capability ceiling. An
-  attacker flips individual IEEE-754 bfloat16 mantissa bits directly inside resident KV cache
-  blocks without changing exponents or signs.
+**Concrete deployment scenarios and threat tiers:** Two real architectures place latent tensors
+on a trust boundary, each corresponding to a distinct threat tier:
+* **Scenario 1 (Tier A, compromised or untrusted sender / bridge seam):** Realistic software
+  attacker. A two-stage agent pipeline where an intake model reading external email, web pages,
+  or photos passes a Cache-to-Cache (C2C) or latent bridge tensor to an executor model holding
+  bearer-gated tool credentials. A compromised sender, bridge process, or crafted external
+  carrier writes latent tensors or KV blocks across the handoff.
+* **Scenario 2 (Tier B only, resident KV tensor write or hardware fault injection):** Capability
+  ceiling. A multi-tenant inference server using Automatic Prefix Caching (such as vLLM APC)
+  where shared system or tool prefixes remain resident in KV memory across requests. Our live
+  CUDA vLLM APC test confirms exact-token prefix caching is value-transparent (`cold -0.1020 ==
+  hit -0.1023`), so API-only clients cannot poison a cached block without injecting adversarial
+  text into the shared prefix itself. Accordingly, the multi-tenant APC scenario applies only
+  under Tier B (resident KV write or hardware fault injection flipping individual IEEE-754
+  bfloat16 mantissa bits without changing exponents or signs).
 
 **Headline scope:** Under Tier B, single-token forcing (`' Ref'`) was measured across six models
 from four families (12/12 [0.76, 1.00] held-out on each). Executed multi-token tool-call forcing
@@ -99,8 +101,8 @@ new runs record achieved norms in every row.)
 | A | Gateway, agent framework | ticket, checkpoint, memory store | 6/6, 3/3, 6/6 | 0/6 [0.00, 0.39] | 6 |
 | A | Prefix cache, deployed stack | shared KV across requests | see 4.6 | : | : |
 | A | Shared-prefix GCG + CUDA APC | shared RAG prefix, text only | 10/10 [0.72, 1.00] (6/6 [0.61, 1.00] held-out) | 0/10 [0.00, 0.28] benign | 10 |
-| B | Sparse KV 1st-token (6 models / 4 families) | 224-640 true bf16 mantissa XOR | 12/12 [0.76, 1.00] each | 0/60 [0.00, 0.06] (uni & pos) | 12 |
-| B | Sparse KV 6-tok JSON tool-call (1 model) | 64-288 true bf16 mantissa XOR | 8/8 [0.68, 1.00] HTTP 200 | 0/20 [0.00, 0.16] (1x & 10x) | 8 |
+| B | Sparse KV 1st-token (6 models / 4 families) | 224-640 true bf16 mantissa XOR | 12/12 [0.76, 1.00] each | 0/720 [0.00, 0.01] 1x evals (0/960 total) | 12 |
+| B | Sparse KV 6-tok JSON tool-call (1 model) | 64-288 true bf16 mantissa XOR | 8/8 [0.68, 1.00] HTTP 200 | 0/160 [0.00, 0.02] evals (20 trials, 1x & 10x) | 8 |
 
 Table 1. Forced rate by track. Attack arm and matched control arm. The prefix-cache row uses
 latency, not counts (see section 4.6); section 8 reports the audited depth pass (8.1 to 8.4).
@@ -449,14 +451,16 @@ mantissa-bit XOR implant from scratch: succeeds across 4 model families, revisin
   gradient-guided sparse pursuit (fresh `DynamicCache`, exact `-g * (x_flip - x)` ranking,
   train-only stopping `fit_loss < 0.05`) forces first-token `' Ref'` on **12 of 12 [0.76, 1.00]
   strictly unseen cross-domain questions (6/6 shipping + 6/6 trivia)** with **identical 12/12
-  CPU cross-checks** and **0/60 [0.00, 0.06]** across all uniform and position-matched random
-  controls: `Qwen2.5-0.5B` (`576` flips, `0.0055%`), `Llama-3.2-1B` (`640`, `0.0027%`),
-  `Granite-3.3-2B` (`288`, `0.00038%`), **`Phi-4-mini-3.8B` (`224`, `0.00023%`: 2.3 bits per
-  million)**, `Qwen3-1.7B` (`352`, `0.00036%`), and `Qwen3-4B` (`352`, `0.00028%`). Larger
-  models show a downward trend (`beta_N = -0.33`, 95% CI `[-0.66, 0.00]`, `R^2 = 0.66` vs cache
-  elements `N`; `beta_params = -0.42`, 95% CI `[-0.79, -0.05]`, `R^2 = 0.71` vs parameters).
-  Because these `n = 6` models span four different families, model scale and model family are
-  confounded across points (within Qwen alone, `0.5B -> 1.7B -> 4B` moves `576 -> 352 -> 352`).
+  CPU cross-checks** against **0/720 [0.00, 0.01] 1x control item-evaluations across 60 trials**
+  (`6 models x 2 control types x 5 seeds x 12 items`, `0/12` each, plus `0/240` across 20 10x
+  trials; `0/960` total): `Qwen2.5-0.5B` (`576` flips, `0.0055%`), `Llama-3.2-1B` (`640`,
+  `0.0027%`), `Granite-3.3-2B` (`288`, `0.00038%`), **`Phi-4-mini-3.8B` (`224`, `0.00023%`:
+  2.3 bits per million)**, `Qwen3-1.7B` (`352`, `0.00036%`), and `Qwen3-4B` (`352`, `0.00028%`).
+  Against parameter count, flip counts trend downward (`beta_params = -0.42`, 95% CI
+  `[-0.79, -0.05]`, `R^2 = 0.71`); against KV cache element count `N`, `beta_N = -0.33`
+  (95% CI `[-0.66, 0.00]`, `R^2 = 0.66`) touches zero at 95% and is borderline. Because these
+  `n = 6` models span four different families, model scale and model family are confounded
+  across points (within Qwen alone, `0.5B -> 1.7B -> 4B` moves `576 -> 352 -> 352`).
 * **Boundary-block localization (`81.5%-100.0%`):** Across all 6 models, **81.5% to 100.0%** of
   flips land in just **two 16-token KV blocks**: Block 0 and the Final Prefix Block (last 16
   tokens), with a sharp architectural split: `Qwen3` (`1.7B`/`4B`) puts `71.6%-75.8%` in
@@ -478,14 +482,14 @@ mantissa-bit XOR implant from scratch: succeeds across 4 model families, revisin
   non-`calc` questions** to freely generate complete 6-token JSON `{"tool": "calc"}` and
   execute on the live bearer-gated tool server with **HTTP 200 (`0/8` [0.00, 0.32] malformed)**;
   at train-stop (`288` flips, `0.29%` L2), CPU cross-check confirms `8/8` [0.68, 1.00] executed
-  and uniform & position-matched controls score **0/20 [0.00, 0.16]** even at `10x` (`2,880`
-  flips). A KL-regularized `"refund"` **conditional trigger** (a perturbation fitted to fire
-  only when a trigger word appears in the user query while leaving clean queries unchanged;
-  `544` flips, `0.23%` L2) reaches `4/6` [0.30, 0.90] unseen trigger items (`5/6` peak) with
-  **0/6 [0.00, 0.39] clean false-positive refusals across all 17 rounds** (`0.488` nats KL,
-  CPU-verified), with partial `2/6` [0.10, 0.70] exact clean top-1 match.
-  Related art: Yamamoto & Matsuura (arXiv 2604.17249, undirected bit-flip damage in shared vLLM
-  prefix blocks).
+  and uniform & position-matched controls score **0/160 [0.00, 0.02] item-evaluations across
+  20 trials (`1x` and `10x`, `0/8` in every trial)**. A KL-regularized `"refund"` **conditional
+  trigger** (a perturbation fitted to fire only when a trigger word appears in the user query
+  while leaving clean queries unchanged; `544` flips, `0.23%` L2) reaches `4/6` [0.30, 0.90]
+  unseen trigger items (`5/6` peak) with **0/6 [0.00, 0.39] clean false-positive refusals across
+  all 17 rounds** (`0.488` nats KL, CPU-verified), with partial `2/6` [0.10, 0.70] exact clean
+  top-1 match. Related art: Yamamoto & Matsuura (2026), *Bit-Flip Vulnerability of Shared
+  KV-Cache Blocks in LLM Serving Systems* (arXiv:2604.17249).
 
 ![Figure 7](figs/fig7_scaling_defense.png)
 
@@ -534,13 +538,20 @@ than model weights or raw prompt text:
 * **Attention sinks:** StreamingLLM (Xiao et al., ICLR 2024) demonstrated that initial sequence
   tokens absorb disproportionate attention mass in autoregressive transformers. Our Tier B
   concentration (`81.5%-100.0%`) in Block 0 and the Final Prefix Block aligns with that leverage.
-* **Weight bit-flip attacks:** Terminal Brain Damage (Hong et al., USENIX Security 2019) and
-  DeepHammer (Yao et al., USENIX Security 2020) showed targeted weight bit flips degrade or
-  redirect neural networks; Yamamoto & Matsuura (arXiv:2604.17249) examined KV/activation fault
-  sensitivity. We show single-mantissa bit flips in resident KV activations alone force held-out
-  first tokens across six models and a 6-token JSON tool call on Qwen3-1.7B.
-* **Tool-use prompt injection:** Indirect prompt injection (Greshake et al., 2023), OWASP LLM06,
-  Answer.AI, and ContractGuard establish text-based tool steering and motivate host capability
+* **Weight and KV bit-flip attacks:** Terminal Brain Damage (Hong et al., USENIX Security 2019)
+  and DeepHammer (Yao et al., USENIX Security 2020) showed targeted weight bit flips degrade or
+  redirect neural networks; Yamamoto & Matsuura (*Bit-Flip Vulnerability of Shared KV-Cache
+  Blocks in LLM Serving Systems*, arXiv:2604.17249, 2026) analyzed undirected bit-flip faults in
+  shared vLLM prefix blocks. We show single-mantissa bit flips in resident KV activations alone
+  force held-out first tokens across six models and a 6-token JSON tool call on Qwen3-1.7B.
+* **Latent-wire integrity:** Brito & Baquero (*When Latent Agents Lie: KV-Cache Integrity in
+  Multi-Agent LLM Collaboration*, arXiv:2606.28958, 2026) proposed HMAC-SHA256 manifests for
+  coordinator-specialist KV exchange and noted that a compromised signing endpoint sits outside
+  transport integrity; our 24/24 sender-signed test confirms that boundary directly.
+* **Tool-use prompt injection and host allowlists:** Indirect prompt injection (Greshake et al.,
+  2023), OWASP LLM06:2025, Piotr Czapla (*The unauthorized tool call problem*, Answer.AI,
+  answer.ai/posts/2026-01-20-toolcalling.html, 2026), and Iyer & Babu (*ContractGuard*,
+  arXiv:2606.18550, 2026) establish text-based tool steering and motivate host capability
   boundaries. We show the same failure persists when text is replaced by latent KV handoffs.
 
 ## 10. Recommendations (in priority order)
@@ -560,32 +571,38 @@ than model weights or raw prompt text:
 
 ## 11. Reproducibility, disclosure, and changelog
 
-* **One-command audit:** `bash checks/verify_all.sh` runs all 13 public stdlib recount scripts
-  and 4 negative fault-injection tests against `SHA256SUMS` in 2 seconds on CPU.
+* **One-command audit:** `bash checks/verify_all.sh` runs all 13 public automated stdlib
+  recount scripts and 4 negative fault-injection tests against `SHA256SUMS` in 2 seconds on CPU
+  (the full internal lab suite runs 78 automated recounts and 12 negative tests).
 * **Single-script live reproduction (64-to-288 flip HTTP 200 tool call):**
   `python3 scripts/reproduce_64flip_toolcall.py` pins `Qwen/Qwen3-1.7B` at Hugging Face commit
   `70d244cc86ccca08cf5af4e1e306ecf908b1ad5e`, sets `--seed 42`, starts a local bearer-gated mock
   server automatically, and writes `flips.json`, `items.jsonl`, and `summary.json`. Reference
-  environment: Apple M1 Pro (16-core GPU, 32 GB RAM), Python 3.12.14, PyTorch 2.15.0,
-  Transformers 4.52.4.
+  environments: local runs used an Apple M1 Pro (16-core GPU, 32 GB unified memory) with Python
+  3.12.14, PyTorch 2.15.0, and Transformers 4.52.4; the live CUDA vLLM APC run used an AWS g4dn
+  NVIDIA Tesla T4 (16 GB, compute capability 7.5) with vLLM 0.11.0 (`torch.float16`).
 * **Disclosure:** `nics-efc/C2C_Fuser` maintainers were contacted privately on 2026-10-24 with a
-  two-week window; no response was received, and findings were published on 2026-11-02.
-  CacheBack, AVP, and Interlat were tested locally against public research repositories without
-  separate prior vendor outreach and are reported as class-level demonstrations. No live
-  production service was tested.
+  two-week window (through 2026-11-07); no response was received, and findings are published
+  publicly on 2026-11-24 (31 days after disclosure). CacheBack, AVP, and Interlat were tested
+  locally against public research repositories without separate prior vendor outreach and are
+  reported as class-level demonstrations. No live production service was tested.
 * **Changelog:**
   * rev 01 (2026-10-24): Initial Tier A C2C text-bridge tool execution (16/16), black-box (7/8),
-    and private disclosure to C2C_Fuser.
-  * rev 02 (2026-11-02): Public release adding CacheBack, AVP, Interlat, 8B receiver, voice and
-    vision carriers, composed chain (57/57), host allowlist (57/57), and HMAC test (24/24).
-  * rev 03 (2026-11-21): Added CUDA vLLM APC transparency test (10/10, 6/6 held-out) and
-    3,600-row forcing-vs-silence tradeoff.
+    and private disclosure to C2C_Fuser (14-day window through 2026-11-07).
+  * rev 02 (2026-11-02): Internal expansion adding CacheBack, AVP, Interlat, 8B receiver, voice
+    and vision carriers, composed chain (57/57), host allowlist (57/57), and HMAC test (24/24).
+  * rev 03 (2026-11-21): Added live CUDA vLLM APC transparency test (10/10, 6/6 held-out) on
+    NVIDIA Tesla T4 and 3,600-row forcing-vs-silence tradeoff.
   * rev 04 (2026-11-22): Added Tier B dense-projection negative (0/10), 6-model / 4-family
     sparse mantissa XOR pursuit (1,320 rows), single-model 64-flip HTTP 200 tool call (8/8),
     `<2.2%` boundary-block lock, and D1.3/D1.4 Jacobian transfer.
-  * rev 05 (2026-11-24): Sanitized public bundle (`v1.1`), removed sensational naming, and
-    published R.11 on symbolonlabs.com.
+  * rev 05 (2026-11-24): Public release (31 days after C2C disclosure) of R.11 on
+    symbolonlabs.com and sanitized public bundle (`v1.0`/`v1.1`).
   * rev 06 (2026-11-24): Added 3-line TL;DR, Tier A / Tier B split, deployment scenarios, scoped
     headline, Wilson 95% CIs, scaling trend `beta` CIs and family confound note, explicit
-    hypothesis labels, related work, ordered recommendations, 4-project disclosure, and
-    single-command `scripts/reproduce_64flip_toolcall.py` (`v1.2`).
+    hypothesis labels, related work, ordered recommendations, disclosure notes for all four
+    evaluated projects, and single-command `scripts/reproduce_64flip_toolcall.py` (`v1.2`).
+  * rev 07 (2026-11-24): Corrected disclosure timeline (31 days, 2026-10-24 to 2026-11-24),
+    scoped multi-tenant APC to Tier B, separated internal (78/12) vs public (13/4) test counts,
+    fixed Tier B control denominators (0/720 1x / 0/960 total and 0/160), led with `beta_params`
+    while noting borderline `beta_N`, added full verified citations and Tesla T4 specs (`v1.3`).

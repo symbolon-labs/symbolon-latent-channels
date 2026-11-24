@@ -8,7 +8,7 @@ grow in repetition. The study reports (`reports/`) each carry their own
 
 - **A research bridge, not a product.** The receiver, sharer and fuser are public research
   checkpoints (`nics-efc/C2C_Fuser`). Disclosure: emailed to the bridge authors
-  2026-10-24 with a two-week window; no response; published 2026-11-02.
+  2026-10-24 with a two-week window (through 2026-11-07); no response; published 2026-11-24 (31 days after disclosure).
 - **One codebase, then two, then a stranger's.** Every result up to 2026-11-02 is on `rosetta`.
   That day the same attack was ported to **CacheBack**, an independent implementation by other
   authors with a different wire (receiver embedding rows). On 2026-11-06 a *third-party, runnable*
