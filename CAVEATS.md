@@ -82,7 +82,7 @@ grow in repetition. The study reports (`reports/`) each carry their own
   null on the text route; that is not the same as "undetectable".
 - That a payload **transfers between models**, families or sizes, without a refit.
 - That **every** latent-handoff codebase is vulnerable (three independent codebases fell: C2C,
-  CacheBack, AVP/Interlat: a pattern, not a universal proof).
+  CacheBack, AVP/Interlat: a recurring pattern across tested bridges, not an exhaustive proof).
 - That models **larger than 8B** (or full-precision 8B without 8-bit quantization) behave the same.
 
 ## The composed end-to-end execution specifically

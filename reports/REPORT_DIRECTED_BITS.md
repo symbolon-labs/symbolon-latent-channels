@@ -26,7 +26,7 @@ stopping rule** (zero held-out peeking), and an independent **CPU `bfloat16` for
    (`beta_N = -0.332` vs cache elements `N`, `beta_params = -0.420` vs parameters): minimum flips for `12/12`
    drop from `576-640` (`0.5B-1.0B`) down to **`224-352` (`2.5B-4.0B`)**: just **`2.3-2.8` bits per million**
    KV elements on `Phi-4-mini` and `Qwen3-4B`.
-3. **Universal boundary-block concentration (`81.5%-100.0%`):** Across all 6 models, **`81.5%-100.0%`** of all
+3. **Boundary-block concentration (`81.5%-100.0%`):** Across all 6 models, **`81.5%-100.0%`** of all
    flips land inside just **two 16-token KV blocks**: Block 0 (tokens `0..15`, attention sink) and the Final
    Prefix Block (last 16 tokens): with an architectural split: `Qwen3` (`1.7B`/`4B`) loads `71.6%-75.8%` into
    Block 0, while `Qwen2.5`, `Llama-3.2`, `Granite-3.3`, and `Phi-4-mini` load `56.9%-81.2%` into the Final
