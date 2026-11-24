@@ -1,4 +1,4 @@
-# Caveats — read before quoting any number
+# Caveats: read before quoting any number
 
 One page. Everything here is a limit of what the results support, listed so the claim does not
 grow in repetition. The study reports (`reports/`) each carry their own
@@ -18,18 +18,18 @@ grow in repetition. The study reports (`reports/`) each carry their own
   and the AVP hit is a **reach** rung (a stranger's thing fell), not a new architectural class;
   AVP's effect is a forced *output*, not a tool execution. On 2026-11-07 a third-party latent
   **agent with a real action step** (Interlat, ALFWorld planner→executor) was stood up and its
-  receiver's environment action forced (5/6 vs random 0/6, base correct, action executed 3/3) — the
+  receiver's environment action forced (5/6 vs random 0/6, base correct, action executed 3/3): the
   action-step leg AVP lacked, still a **reach** rung, Qwen-family and per-pair. A learned cross-pair
   mapper (SwaT) was
   trained once and a delta **survives** it (12/12 vs random 0/12), but the base emits **no tool word
-  at all** (0/12) — so the delta *fills a blank*, it does not yet *redirect* a correct choice — and
+  at all** (0/12): so the delta *fills a blank*, it does not yet *redirect* a correct choice: and
   the mapper is itself pair-specific. Stage-2 CE (~$0.30) is the fix for the redirect.
-  **Update 2026-11-08:** the stage-2 CE did *not* fix it, but a **decode bug** in the harness did —
+  **Update 2026-11-08:** the stage-2 CE did *not* fix it, but a **decode bug** in the harness did : 
   after aligning the decode and training on the tool distribution, the base is correct 6/12 and the
   delta **redirects it 6/6** (attack 12/12, random 1/12). So through SwaT the delta *does* redirect
   a correct base; the mapper is still per-pair, so the refit asterisk is reframed, not killed.
   Separately, the **sender-only no-infrastructure route (R1) is CLOSED**: a doc+delta crafted on a
-  train split forces 0/6 held-out, even at a per-item-refit ceiling of 0/6 — the delta does not
+  train split forces 0/6 held-out, even at a per-item-refit ceiling of 0/6: the delta does not
   survive the sharer-only path.
 - **Small-to-mid models.** 0.6B, 1.7B and **8B** receivers; the 8B run is the largest released
   pair (Qwen3-8B/Qwen2.5-7B) and it landed 8/8 vs random 0/8. "Small models" is no longer a
@@ -43,8 +43,8 @@ grow in repetition. The study reports (`reports/`) each carry their own
 
 - **Refit per pairing, not transfer.** The main results are fit per prompt pair; the codebook
   and the Llama family run are refit per pair. Different model pairs have different cache
-  shapes (28x2x128 Qwen vs 16x8x64 Llama), so a literal cross-pair transfer — with a
-  projection map — is unbuilt. "Works on a different family" means *the method works after a
+  shapes (28x2x128 Qwen vs 16x8x64 Llama), so a literal cross-pair transfer: with a
+  projection map: is unbuilt. "Works on a different family" means *the method works after a
   refit*, not that one file moves.
 - **And the transfer rung failed (2026-11-02).** A payload fit on the 1.7B pair, mapped
   deterministically onto the 0.6B pair, is indistinguishable from a random norm-matched delta
@@ -60,7 +60,7 @@ grow in repetition. The study reports (`reports/`) each carry their own
   forward, which the stock path detaches. The deployable payload needs no gradients, but
   whoever fits it does.
 - **Black-box is partial.** From score feedback only (logprobs, no gradients): 7/8 wrong-tool
-  execution and 12/18 on the codebook. From **labels only**: 0/4 — a negative, kept on purpose,
+  execution and 12/18 on the codebook. From **labels only**: 0/4: a negative, kept on purpose,
   because 1-bit feedback is structurally zero at this radius.
 - **Arguments were forced 6 of 8 times.** The two misses lost the argument, not the tool; the
   tool was forced 8/8 in that run. So "the attacker writes the call" holds for the tool
@@ -78,21 +78,21 @@ grow in repetition. The study reports (`reports/`) each carry their own
 
 - That any **production** deployment is exploitable.
 - That any **mitigation** fails. Detectors were built and scored (0.94 AUROC, 0.06 TPR at 1%
-  FPR) — a bad monitor, not proof no monitor works. Canary carriage and wire monitors were
+  FPR): a bad monitor, not proof no monitor works. Canary carriage and wire monitors were
   null on the text route; that is not the same as "undetectable".
 - That a payload **transfers between models**, families or sizes, without a refit.
 - That **every** latent-handoff codebase is vulnerable (three independent codebases fell: C2C,
-  CacheBack, AVP/Interlat — a pattern, not a universal proof).
+  CacheBack, AVP/Interlat: a pattern, not a universal proof).
 - That models **larger than 8B** (or full-precision 8B without 8-bit quantization) behave the same.
 
-## The composed kill chain specifically
+## The composed end-to-end execution specifically
 
 - **Forcing and silence do not coincide.** The shipped payload forces (wrong tool executes,
   authenticated) but moves the wire ~22× the benign spread, so a content-aware monitor sees it.
   Rescaling to hide (ratio < 1) drops forcing to zero; a refit at the quiet budget does not
   rescue it (0.002 → forces but ratio 2.4; 0.001 → ratio 1.3 and forcing 0.04). The honest line:
   "the strong codebook is loud; a quiet payload is weak, and no budget is both."
-  `REPORT_KILLCHAIN.md`.
+  `REPORT_EXECUTION.md`.
 - The composed chain's "silent" is measured against **our** monitor (a kNN on a subsampled cache
   fingerprint), not a production one. `REPORT_SUITE.md`'s 6%-at-1%-FPR is a different monitor set
   and a different claim.
@@ -103,13 +103,13 @@ grow in repetition. The study reports (`reports/`) each carry their own
   in the receiver's prompt (SHARED 2/12 vs control 0/12); when it reaches the receiver *only through
   the bridge* (ASYM) it is inert (0/12). This is the canary-null reproduced on the routing task, not
   a new channel.
-- **The decision margin is not a flip certificate.** Margin moved on 11–12/12 items but greedy
+- **The decision margin is not a flip certificate.** Margin moved on 11-12/12 items but greedy
   followed rarely: optimising the forced-prefix decision position overfits a position free
   generation does not stand on. A greedy-in-the-loop objective is the untried fix.
 - **The JOINT arm (doc + delta, the "contact injection") is a DECISIVE NEGATIVE on the true
   no-infra placement.** One doc + one delta crafted on a train split, applied to 6 held-out
   prompts (ASYM, sender-only): attack 0/6, doc-only 0/6, random 0/6, **per-item-refit ceiling 0/6**.
-  A delta that forces 16/16 when applied receiver-side does *nothing* through the sender-only path —
+  A delta that forces 16/16 when applied receiver-side does *nothing* through the sender-only path : 
   it does not survive the sharer→receiver projection. **The pure no-middlebox route is closed.**
   The only open R1 variant is the SHARED joint arm, which is no longer a no-middlebox position.
 - Small n (12), one seed, one pair (Qwen3-1.7B/Qwen2.5-1.5B), one template. `REPORT_SENDERSIDE.md`.
@@ -129,7 +129,7 @@ grow in repetition. The study reports (`reports/`) each carry their own
 ## Positioning against prior work (updated 2026-11-14, `PRIOR_ART.md`)
 
 - **Do not claim the latent channel is unstudied, or that "no integrity check" is our idea.**
-  The 2605–2607 cluster studies latent channels; `arXiv 2606.28958` ("When Latent Agents Lie")
+  The 2605-2607 cluster studies latent channels; `arXiv 2606.28958` ("When Latent Agents Lie")
   proposes an HMAC transport manifest and is the closest work. Cite it; do not re-litigate it.
 - **What is still ours and must be defended, not assumed:** external attacker (no model, no key);
   the effect is **unauthorized tool execution under the receiver's key**, not a wrong answer;
@@ -138,13 +138,13 @@ grow in repetition. The study reports (`reports/`) each carry their own
   scope there.
 - **The reviewer trap is now closed as a test, not a claim:** we implemented the 2606.28958 HMAC
   manifest and attacked it. Controls perfect (honest 24/24 accepted, tamper 24/24 rejected); our
-  sender-side delta is accepted 24/24 while the wrong tool runs 16/24 — the manifest's own
-  endpoint-signing blind spot. And neither released bridge ships a manifest. `REPORT_DEFENSE_NUKE.md`.
+  sender-side delta is accepted 24/24 while the wrong tool runs 16/24: the manifest's own
+  endpoint-signing blind spot. And neither released bridge ships a manifest. `REPORT_DEFENSE_TEST.md`.
 - **Caveat on that:** the manifest is necessary, not sufficient. A defence must bind *what the
   cache should be* to a principal the attacker lacks (sender attestation, re-derivation, or a
   behavioural cross-check). The manifest implementation is from the paper's description, not their
-  code; the 24/24 reject control is what makes it credible. The general form — a transport MAC
-  authenticates *"unchanged," not "correct"*, so a sender-side attacker is authoritative — is
+  code; the 24/24 reject control is what makes it credible. The general form: a transport MAC
+  authenticates *"unchanged," not "correct"*, so a sender-side attacker is authoritative: is
   `REPORT_ATTESTATION.md` (route R2).
 - **Broader positioning (2026-11-14).** The modality carriers, the projector-poison technique,
   the prefix-cache cousin, and the held tool-registry defense all have prior or concurrent art.
@@ -168,12 +168,12 @@ grow in repetition. The study reports (`reports/`) each carry their own
 
 Per the publication policy of 2026-11-15 (see NEXT_SESSION.md):
 
-* The **cache-implant mechanism** (`studies/persistence_20261113/`) — first the local demo
+* The **cache-implant mechanism** (`studies/persistence_20261113/`): first the local demo
   (forced token 10/10 across a process restart), and now the **real-vLLM behavioral implant**
   (live vLLM with APC: base 0/10 natural, poisoned cached blocks 10/10 forced, persisted on the
   dwell re-check; `checks/verify_apc_implant.py`). Quote only with its boundary: one small model
   (Qwen2.5-0.5B) served by vLLM, one seed, first-token metric with a degenerate continuation,
-  and the injection point is the engine's KV tensors (the compromised-routing-layer model — not
+  and the injection point is the engine's KV tensors (the compromised-routing-layer model: not
   a through-the-API tensor write). Selective (trigger-conditional) firing is partial: the single
   phrase works (4/4), a second behavior and clean-question naturalness are open (0/4, 1/6).
 * The **checkpoint self-healing, the cross-tenant implant, the agent-to-agent worm, and the
@@ -187,18 +187,18 @@ Per the publication policy of 2026-11-15 (see NEXT_SESSION.md):
   questions (**`6/6` strictly held-out** after separating 4 questions that overlapped `TRAIN_Q`)
   vs `0/10` benign on `Qwen2.5-0.5B-Instruct` / vLLM `0.11.0` / T4 (`torch.float16`, not `bf16`).
   CUDA APC is value-transparent (`1_cold` `-0.1020` == `3_hit` `-0.1023`), which proves **the
-  text causes the forcing and APC preserves it transparently** — this is **not** API-only
+  text causes the forcing and APC preserves it transparently**: this is **not** API-only
   first-occupier cache poisoning (a cold victim is forced identically). Recorded flaws of the
   Nov 22 box run: `flush()` evicted 0/30,960 blocks, `collision` sent `P_coll` on both plant and
   victim, `P_rand` was 4.1× shorter, 0/10 completions said `"Refused"`, and raw CPU divergence
   artifacts were overwritten (`reports/vllm_cpu_prefix_cache_issue_draft.md` is held as incomplete).
-* **Forcing–silence tradeoff with clean controls & cluster CIs (`studies/theory_20261121/`).**
+* **Forcing-silence tradeoff with clean controls & cluster CIs (`studies/theory_20261121/`).**
   Rebuilt 2026-11-23 (`3,600` rows, `24` items = `12` train + `12` held-out, `f=0.0` clean +
   norm-matched random controls, unique per-cell RNG, LOO wire ratios, cluster 95% CIs). Greedy
   targeted forcing (`target != expected`) drops monotonically `1.000` (`22.5×`) → `0.854`
   (`11.3×`) → `0.354` (`5.7×`) → `0.042` (`2.3×`) → **`0.000` (`≤1.29×`)**. Under `temp=0.7`
   sampling, quiet `wrong_exec` (`0.104` at `1.29×` and `0.77×`) is indistinguishable from the
-  clean (`0.083`), same-tool (`0.100–0.125`), and random (`0.108–0.117`) noise floor — the
+  clean (`0.083`), same-tool (`0.100-0.125`), and random (`0.108-0.117`) noise floor: the
   earlier "~6% slow-drip" claim is retracted. Boundaries: one pair, one Key-only kNN monitor,
   rescaled frozen codebook (no quiet-budget refit).
 * **4-family sparse directed bit flips, live tool-call execution & boundary defense (`studies/hardware_bits_20261122/`).**
@@ -210,38 +210,38 @@ Per the publication policy of 2026-11-15 (see NEXT_SESSION.md):
     questions (`6/6` shipping + `6/6` trivia, CPU-verified identical, `0/12 × 5` uniform & pos-matched controls)**
     across all 6 tested models (`Qwen2.5-0.5B`: `576` flips; `Llama-3.2-1B`: `640`; `Granite-3.3-2B`: `288`;
     `Phi-4-mini-3.8B`: **`224`**, `0.00023%`; `Qwen3-1.7B`: `352`; `Qwen3-4B`: `352`, `0.00028%`), yielding a
-    **negative scaling law (`beta_N = -0.332`, `beta_params = -0.420`)** — larger models need *fewer* bit flips —
-    and **`81.5%–100.0%`** concentration in Block 0 + Final Block (`Qwen3` loads Block 0 `72%–76%`; the other
-    four models load the Final Block `57%–81%`).
+    **negative scaling law (`beta_N = -0.332`, `beta_params = -0.420`)**: larger models need *fewer* bit flips : 
+    and **`81.5%-100.0%`** concentration in Block 0 + Final Block (`Qwen3` loads Block 0 `72%-76%`; the other
+    four models load the Final Block `57%-81%`).
   - *Boundary-block defense (Part C):* Locking only Block 0 (`<1.1%` cache) slows `Qwen3-1.7B` (`1.9×`) but fails
     on `Llama-3.2-1B` (`1.1×`). Locking **both Block 0 + Final Block (`<2.2%` cache)** blocks `12/12` up to
     `1,792` flips (`>5.1×`, stops `11/12`) on `Qwen3-1.7B` and `1,920` flips (`>3.0×`, only `5/12`) on
     `Llama-3.2-1B`, forcing relocation into Block 1.
-  - *Multi-token tool-call execution & selective sleeper (Part D):* On a 422-token shared tool prefix (`Qwen3-1.7B`),
+  - *Multi-token tool-call execution & conditional trigger (Part D):* On a 422-token shared tool prefix (`Qwen3-1.7B`),
     **`64` flips (`0.00026%`, `0.15%` L2)** drive **`8/8` strictly unseen non-`calc` items** to freely emit valid
     `{"tool": "calc"}` JSON and execute with bearer-gated **HTTP 200 (`0/8` malformed)**; at the train-only stop
     (`288` flips, `0.29%` L2), CPU cross-check confirms `8/8` executed and uniform & position-matched controls
-    score **`0/8 × 5`** even at `10×` (`2,880` flips). A KL-regularized `"refund"` sleeper (`544` flips, `0.23%` L2)
+    score **`0/8 × 5`** even at `10×` (`2,880` flips). A KL-regularized `"refund"` conditional trigger (`544` flips, `0.23%` L2)
     forces `4/6` unseen trigger items (`5/6` peak) with **`0/6` clean FP across all 17 rounds** (`0.488` nats KL),
     but exact greedy clean top-1 preservation is partial (`2/6`, CPU-verified identical).
-  - *Boundaries:* Physical DRAM/HBM Rowhammer/GPUHammer deliverability of `64–352` targeted flips across 2 physical
-    KV pages is unmeasured; selective sleeper clean preservation (`2/6` exact top-1) is partial.
+  - *Boundaries:* Physical DRAM/HBM Rowhammer/GPUHammer deliverability of `64-352` targeted flips across 2 physical
+    KV pages is unmeasured; conditional trigger clean preservation (`2/6` exact top-1) is partial.
 * **Token-4 broadcast Jacobian geometry, D1.3 `pinv` & D1.4 syntax-nullspace transfer (`studies/projector_geometry_20261123/`).**
   Rebuilt 2026-11-23 in the actual broadcast space (`d = 14,336` large / `6,144` small) at generated
   token 4 (`'{"tool": "'` → tool name) with Rayleigh-Ritz randomized SVD and disjoint-template
-  prompts. Top-8 captures `44%–83%` Frob² and is prompt-stable (`0.72–0.88` leading cosine even
-  with zero shared template tokens). Production payloads are **`12×–277×` enriched vs random**
+  prompts. Top-8 captures `44%-83%` Frob² and is prompt-stable (`0.72-0.88` leading cosine even
+  with zero shared template tokens). Production payloads are **`12×-277×` enriched vs random**
   in `tool3`/`vocab8` yet retain `>94%` of energy in the complement. Surgery (`n=16` non-vacuous,
   HTTP 200): `intact`/`quiet_tool3`/`quiet_vocab8` execute `16/16` (`0/24` malformed), while
   norm-matched `sens_tool3_matched`/`sens_vocab8_matched` destroy JSON **`24/24`** (`0/16` forced,
   vs `random_matched` `3/16` forced, `8/24` malformed); norm-matched Key-only LOO monitor is
-  `22.5×` (`quiet`/`intact`) vs `7.3×–8.4×` (`sens_matched`, Value-heavy; earlier unscaled
+  `22.5×` (`quiet`/`intact`) vs `7.3×-8.4×` (`sens_matched`, Value-heavy; earlier unscaled
   `61.9× vs 4.1×` inversion retracted). **D1.3 Moore-Penrose pseudo-inverse transfer (`J_tgt^+ @ dz_src`):**
   steers margins positively in both directions (`+1.12` to `+5.36` vs random `~0`) and **partially
   rescues zero-shot `0.6B -> 1.7B` transfer (`15/48` vs `0/48` at `α=0.30`, `14/16` on `search`)**,
   before hitting JSON collapse at `α=1.00` (`45/48` and `18/18` malformed). **D1.4 closed-form
   syntax-nullspace projection (`(J_tool P_null)^+ @ dz_src`, zeroing `J_syn4` and `J_syn20` at gen
   pos `0..3`):** modestly lifts small/mid regimes (`α=0.15`: `7→8→9/48`; `α=0.50`: `6→10/48` on
-  `1.7B`, `2→4/18` on `0.6B`), **yet still collapses `48/48` and `18/18` malformed at `α=1.00`** —
+  `1.7B`, `2→4/18` on `0.6B`), **yet still collapses `48/48` and `18/18` malformed at `α=1.00`** : 
   proving the cross-pair transfer wall is genuinely **higher-order nonlinearity**, not first-order
   syntax-logit leakage.

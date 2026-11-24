@@ -1,4 +1,4 @@
-# Report: D2 — Shared-prefix GCG injection under live vLLM CUDA prefix caching (reframed 2026-11-23)
+# Report: D2: Shared-prefix GCG injection under live vLLM CUDA prefix caching (reframed 2026-11-23)
 
 Date: 2026-11-22 (audited & reframed 2026-11-23). Study: `studies/remote_vector_20261121/`.
 Recount: `checks/verify_apc_remote.py`. Stack: g4dn/T4, vLLM 0.11.0, `Qwen/Qwen2.5-0.5B-Instruct`,
@@ -23,7 +23,7 @@ to `float16` per `runs/remote_spot/serve.log`), APC enabled.
 2. **CUDA prefix caching is value-transparent:** on `runs_box_final/discriminator/rows.json`, cold
    prefill (`1_cold`) emits `' Ref'` at logprob **`-0.1020`** and cache hit (`3_hit`, `4_rehit`)
    emits `' Ref'` at **`-0.1023`** (on `q2`: `-0.1523` vs `-0.1505`). Thus **the adversarial text
-   in the shared document causes the forcing, and APC preserves it transparently** — a cold victim
+   in the shared document causes the forcing, and APC preserves it transparently**: a cold victim
    with no prior attacker API request is forced identically.
 
 | Arm (`runs_box_final/apc_remote/rows.json`) | Forced `' Ref'` (all 10) | Strictly held-out (6) | Notes |
@@ -37,7 +37,7 @@ to `float16` per `runs/remote_spot/serve.log`), APC enabled.
 **Scoring note:** The on-box `summary.json` wrote `0/10` because the original scorer stripped the
 leading space before re-encoding (`'Ref'` token 3945 ≠ `' Ref'` token 8550). Rescoring the saved
 completion text in `rows.json` recovers `10/10` (`6/6` strictly held-out) leading-`Ref` completions,
-though **0/10** completions actually say `"Refused"` — 6/10 answer the user's question normally
+though **0/10** completions actually say `"Refused"`: 6/10 answer the user's question normally
 after echoing `' Ref'` / `Ref业` / `Ref预备ext` copied from `doc_text`.
 
 ---
@@ -72,7 +72,7 @@ after echoing `' Ref'` / `Ref业` / `Ref预备ext` copied from `doc_text`.
 4. **Unmatched `random` control:** `rand_doc` sampled `len(doc.split())` = 12 English words (14
    tokens) vs 58 GCG tokens (**4.1× shorter**, clean English vocabulary).
 5. **Latency is not TTFT:** `post()` is non-streaming wall-clock completion time comparing
-   `max_tokens=8` victims (median `0.1636 s`, vs `natural` rows 1–9 median `0.1652 s`) against
+   `max_tokens=8` victims (median `0.1636 s`, vs `natural` rows 1-9 median `0.1652 s`) against
    `max_tokens=1` plant requests (`0.0258 s`). No victim-side TTFT reuse gap was isolated.
 6. **CPU backend divergence (unverified draft):** Local macOS ARM64 CPU runs (`vLLM 0.11.0`,
    Torch SDPA, chunked prefill disabled) showed a cached-vs-fresh logit shift, but the raw CPU

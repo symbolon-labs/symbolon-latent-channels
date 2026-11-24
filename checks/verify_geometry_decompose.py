@@ -147,11 +147,11 @@ def main() -> int:
             ok = False
 
     print("\nRECOUNT GEOMETRY-DECOMPOSE: " + (
-        "OK — token-4 broadcast Jacobian is low-rank & prompt-stable on disjoint prompts; "
+        "OK: token-4 broadcast Jacobian is low-rank & prompt-stable on disjoint prompts; "
         "payloads 12x-277x enriched; quiet arms execute 16/16 while tangent-only arms destroy JSON 24/24; "
         "D1.3 pinv rescues 15/48 vs 0/48 at alpha=0.30 (14/16 search); D1.4 syntax-nullspace lifts "
         "mid-regime (0.50: 6->10/48 & 2->4/18) yet still collapses 48/48 & 18/18 at alpha=1.00 (higher-order nonlinearity)"
-        if ok else "CHECK — see runs/"))
+        if ok else "CHECK: see runs/"))
     return 0 if ok else 1
 
 

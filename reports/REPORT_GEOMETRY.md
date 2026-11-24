@@ -1,4 +1,4 @@
-# Report: D1 — Broadcast-space token-4 Jacobian geometry & subspace surgery (rebuilt 2026-11-23)
+# Report: D1: Broadcast-space token-4 Jacobian geometry & subspace surgery (rebuilt 2026-11-23)
 
 Date: 2026-11-23 (supersedes the flawed interim 2026-11-23 draft).
 Study: `studies/projector_geometry_20261123/`. Recount: `checks/verify_geometry_decompose.py`.
@@ -25,26 +25,26 @@ disjoint-template prompts, strictly non-vacuous surgery (`n = 16` non-`calc` ite
 **norm-matched leave-one-out benign-spread monitor ratios**:
 
 1. **Low-rank, genuinely prompt-stable sensitivity subspace:** Top-8 full-vocab singular directions
-   capture **`57%–83%`** (large) / **`44%–62%`** (small) of estimated Frobenius energy. Even across
+   capture **`57%-83%`** (large) / **`44%-62%`** (small) of estimated Frobenius energy. Even across
    **completely disjoint-template prompts** (zero shared template tokens), the leading principal-angle
-   cosine is **`0.72–0.82` (large)** and **`0.81–0.88` (small)** for `vocab8` (`0.63–0.71` /
-   `0.56–0.81` for `tool3`).
-2. **Fitted payloads are strongly enriched (`12×–277×` above random) in the local Jacobian, yet
+   cosine is **`0.72-0.82` (large)** and **`0.81-0.88` (small)** for `vocab8` (`0.63-0.71` /
+   `0.56-0.81` for `tool3`).
+2. **Fitted payloads are strongly enriched (`12×-277×` above random) in the local Jacobian, yet
    keep `>94%` of energy outside it:** On the large pair (`d = 14,336`), the three production
-   codebook payloads capture **`0.40%–5.80%`** of energy in `tool3` (**`19.1×–277.3×` random
-   baseline `3/d = 0.021%`**) and **`1.63%–2.22%`** in `vocab8` (**`29.3×–39.7×` random
-   `8/d = 0.056%`**). Payloads do **not** "avoid" the sensitive subspace—they load heavily onto
+   codebook payloads capture **`0.40%-5.80%`** of energy in `tool3` (**`19.1×-277.3×` random
+   baseline `3/d = 0.021%`**) and **`1.63%-2.22%`** in `vocab8` (**`29.3×-39.7×` random
+   `8/d = 0.056%`**). Payloads do **not** "avoid" the sensitive subspace: they load heavily onto
    it relative to chance while spreading most finite-norm energy across the remaining `14,328` dims.
 3. **Surgery (`payload_calc`, `n = 16` strictly non-vacuous items, HTTP 200 execution):**
    - Removing `tool3` (`quiet_tool3`) or `vocab8` (`quiet_vocab8`) leaves cosine `> 0.99` with the
      intact payload and preserves **`16/16` forced execution (`0/16` malformed)**.
    - Compressing the full payload norm (`176.1`) into the local `p = 0` Jacobian (`sens_tool3_matched`
      or `sens_vocab8_matched`) **destroys valid JSON on `24/24` items (`16/16` non-vacuous malformed,
-     `0/16` forced)**—NOT "random-equivalent" (`random_matched` gets `3/16` forced, `8/24` malformed).
+     `0/16` forced)**: NOT "random-equivalent" (`random_matched` gets `3/16` forced, `8/24` malformed).
      Large finite-norm steering is fundamentally nonlinear and distributed beyond the `p = 0`
      3-to-8-dim tangent space.
    - **Norm-matched monitor check (LOO benign 95th = `2.746`):** `intact`/`quiet`/`random_matched`
-     all sit at **`22.54×–23.98×`** benign spread; `sens_tool3_matched` (`7.26×`) and
+     all sit at **`22.54×-23.98×`** benign spread; `sens_tool3_matched` (`7.26×`) and
      `sens_vocab8_matched` (`8.41×`) are ~3× quieter on our **Key-only** kNN monitor (because the
      local Jacobian is heavier on Value caches and non-sampled layers), yet still well above `1×`
      detection.
@@ -55,10 +55,10 @@ disjoint-template prompts, strictly non-vacuous surgery (`n = 16` non-`calc` ite
 
 | Pair (`d`) | Prompt set | `tool3` top-1 stability cos | `vocab8` top-1 stability cos | `vocab8` top-8 / Frob² |
 |---|---|---:|---:|---:|
-| Large (`14,336`) | `exec` (shared template) | `0.73–0.79` | `0.77–0.84` | `0.57–0.66` |
-| Large (`14,336`) | `disjoint` (no shared template) | `0.63–0.71` | `0.72–0.82` | `0.40–0.83` |
-| Small (`6,144`) | `exec` (shared template) | `0.64–0.85` | `0.83–0.90` | `0.47–0.57` |
-| Small (`6,144`) | `disjoint` (no shared template) | `0.56–0.81` | `0.81–0.88` | `0.44–0.62` |
+| Large (`14,336`) | `exec` (shared template) | `0.73-0.79` | `0.77-0.84` | `0.57-0.66` |
+| Large (`14,336`) | `disjoint` (no shared template) | `0.63-0.71` | `0.72-0.82` | `0.40-0.83` |
+| Small (`6,144`) | `exec` (shared template) | `0.64-0.85` | `0.83-0.90` | `0.47-0.57` |
+| Small (`6,144`) | `disjoint` (no shared template) | `0.56-0.81` | `0.81-0.88` | `0.44-0.62` |
 
 ### Production payload alignment (broadcast space, `exec_p0`)
 
@@ -88,7 +88,7 @@ disjoint-template prompts, strictly non-vacuous surgery (`n = 16` non-`calc` ite
 
 ---
 
-## 3. D1.3 — White-box Moore-Penrose pseudo-inverse cross-pair transfer (`pinv_transfer.py`)
+## 3. D1.3: White-box Moore-Penrose pseudo-inverse cross-pair transfer (`pinv_transfer.py`)
 
 Closes `DEPTH_PLAN.md` §D1.3: given source pair `A`'s actual finite tool-logit shift
 `dz_src = z_A(p_src) - z_A(0)` in `R^3` (averaged over 3 exec prompts) and target pair `B`'s
@@ -119,7 +119,7 @@ random deltas and the native target ceiling across all 3 tools (`calc`, `search`
 
 ---
 
-## 4. D1.4 — Closed-form syntax-nullspace projection (`nullspace_transfer.py`)
+## 4. D1.4: Closed-form syntax-nullspace projection (`nullspace_transfer.py`)
 
 Does projecting out the first-order JSON syntax Jacobian break the `alpha = 1.00` collapse wall?
 We form the exact broadcast Jacobian of the 4 generated JSON prefix tokens (`'{"'`, `'tool'`,
@@ -130,10 +130,10 @@ the exact constrained minimum-norm solution `p_null = (J_tool P_null)^+ dz_src` 
 
 | Direction (`n`) | Method | `cos(tool3, syn)` | `alpha=0.15` (mal) | `alpha=0.30` (mal) | **`alpha=0.50`** (mal) | `alpha=0.75` (mal) | `alpha=1.00` (mal) |
 |---|---|---|---:|---:|---:|---:|---:|
-| `0.6B -> 1.7B` (`48`) | `pinv_raw` | — | `7/48` (`0`) | **`15/48`** (`6`) | `6/48` (`24`) | `3/48` (`37`) | `3/48` (**`45/48`**) |
+| `0.6B -> 1.7B` (`48`) | `pinv_raw` |: | `7/48` (`0`) | **`15/48`** (`6`) | `6/48` (`24`) | `3/48` (`37`) | `3/48` (**`45/48`**) |
 | `0.6B -> 1.7B` (`48`) | `pinv_null_syn4` | `0.28, 0.15, 0.03` | `8/48` (`0`) | `13/48` (`11`) | **`10/48`** (`19`) | **`7/48`** (`34`) | `0/48` (**`48/48`**) |
 | `0.6B -> 1.7B` (`48`) | `pinv_null_syn20` | `0.53, 0.33, 0.20` | **`9/48`** (`0`) | `5/48` (`16`) | `7/48` (`25`) | `0/48` (`48`) | `0/48` (**`48/48`**) |
-| `1.7B -> 0.6B` (`18`) | `pinv_raw` | — | `0/18` (`2`) | `0/18` (`5`) | `2/18` (`9`) | `0/18` (`18`) | `0/18` (**`18/18`**) |
+| `1.7B -> 0.6B` (`18`) | `pinv_raw` |: | `0/18` (`2`) | `0/18` (`5`) | `2/18` (`9`) | `0/18` (`18`) | `0/18` (**`18/18`**) |
 | `1.7B -> 0.6B` (`18`) | `pinv_null_syn4` | `0.36, 0.23, 0.15` | `0/18` (`4`) | `0/18` (`10`) | **`4/18`** (`10`) | `0/18` (`18`) | `0/18` (**`18/18`**) |
 | `1.7B -> 0.6B` (`18`) | `pinv_null_syn20` | `0.65, 0.48, 0.34` | `0/18` (`2`) | **`2/18`** (`6`) | `3/18` (`9`) | `0/18` (`18`) | `0/18` (**`18/18`**) |
 

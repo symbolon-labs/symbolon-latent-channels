@@ -2,7 +2,7 @@
 """Recount for the PIXEL (embedded-instruction) vision attack (runs/pixel_fixed).
 
 The KV attack (#55) perturbed the sender's KV on the wire. This run perturbs the preprocessed
-IMAGE PIXELS only — no wire access at all. This recount asserts the control:
+IMAGE PIXELS only: no wire access at all. This recount asserts the control:
   - base-correct items only (non-vacuous), forced-to-CHOSEN-target;
   - on the distance-matched subset (requiring >= half of items matched), ATTACK >> RANDOM;
   - reports median PSNR and median achieved KV-delta/KV-norm ratio honestly (noting that
@@ -32,9 +32,9 @@ def main() -> int:
     base = json.loads(base_p.read_text()) if base_p.exists() else {}
     base_hit = sum(v[0] for v in base.values()); base_tot = sum(v[1] for v in base.values())
     print(f"Pixel-attack recount: rows={len(rows)} base-correct items={len(rows)//max(len({round(r['budget'],3) for r in rows}),1)}")
-    print(f"  base correct {base_hit}/{base_tot} ({(base_hit/max(base_tot,1)):.3f}) — bridge limiter, non-vacuous filter applied")
+    print(f"  base correct {base_hit}/{base_tot} ({(base_hit/max(base_tot,1)):.3f}): bridge limiter, non-vacuous filter applied")
     if not rows:
-        print("RECOUNT VISION-PIXEL: CHECK — no rows")
+        print("RECOUNT VISION-PIXEL: CHECK: no rows")
         return 1
 
     ok = True
@@ -44,7 +44,7 @@ def main() -> int:
         sub = [r for r in rows if abs(r["budget"] - B) < 1e-9]
         a, n = sum(r["atk_forced"] for r in sub), len(sub)
         r_ = sum(r["rnd_forced"] for r in sub)
-        # matched subset: the fair comparison — controls whose achieved KV distance is within
+        # matched subset: the fair comparison: controls whose achieved KV distance is within
         # the recorded tolerance of the attack's; unmatched controls are reported separately
         m = [r for r in sub if r.get("matched", 0) == 1]
         a_m = sum(r["atk_forced"] for r in m)
@@ -72,9 +72,9 @@ def main() -> int:
         ok = False
 
     print("\nRECOUNT VISION-PIXEL: " + (
-        "OK — PIXELS ALONE carry the forced tool at every budget; random pixel noise flips a "
+        "OK: PIXELS ALONE carry the forced tool at every budget; random pixel noise flips a "
         "minority (fragile borderline items) but never tracks the attack"
-        if ok else "CHECK — random tracks attack; downgrade the pixel row"))
+        if ok else "CHECK: random tracks attack; downgrade the pixel row"))
     return 0 if ok else 1
 
 

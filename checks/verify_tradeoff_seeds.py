@@ -27,7 +27,7 @@ ORDER = ["1.0", "0.5", "0.25", "0.1", "0.05", "0.02"]
 def main() -> int:
     rp, sp = R / "rows.json", R / "summary.json"
     if not rp.exists() or not sp.exists():
-        print(f"MISSING {rp.name}/{sp.name} — no rows, no recount")
+        print(f"MISSING {rp.name}/{sp.name}: no rows, no recount")
         return 1
     rows = json.loads(rp.read_text())
     s = json.loads(sp.read_text())
@@ -109,10 +109,10 @@ def main() -> int:
         ok = False
 
     print("\nRECOUNT TRADEOFF-SEEDS: " + (
-        "OK — monotone forcing-vs-loudness tradeoff verified with clean f=0.0 and norm-matched "
+        "OK: monotone forcing-vs-loudness tradeoff verified with clean f=0.0 and norm-matched "
         "random controls, LOO wire ratios, and cluster CIs; quiet corner (f=0.02, 0.77x) drops to "
         "0.000 greedy and matches the temp=0.7 noise floor under sampling"
-        if ok else "CHECK — see rows.json"))
+        if ok else "CHECK: see rows.json"))
     return 0 if ok else 1
 
 

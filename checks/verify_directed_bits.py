@@ -7,11 +7,11 @@ XOR invariants on EVERY row (exponent_bit_changes == 0, sign_bit_changes == 0, m
   - projecting the dense Adam delta onto true <=1-mantissa-bit XOR neighbors forces 0/10 up to 100%;
   - matched random single-mantissa-bit XOR controls force 0/10 across >=15 trials.
 
-Parts B-E (sparse pursuit, boundary defense, multi-token tool-call + sleeper, and 4-family
+Parts B-E (sparse pursuit, boundary defense, multi-token tool-call + conditional trigger, and 4-family
 scaling law) have their own dedicated PER-ITEM fail-closed recounts:
   - checks/verify_sparse_pursuit.py
   - checks/verify_boundary_defense.py
-  - checks/verify_toolcall_sleeper.py
+  - checks/verify_toolcall_trigger.py
   - checks/verify_scaling_law.py
 
   python checks/verify_directed_bits.py [studies]
@@ -65,9 +65,9 @@ def main() -> int:
         ok = False
 
     print("\nRECOUNT DIRECTED-BITS (PART A): " + (
-        "OK — projecting the dense Adam #65 delta onto true bf16 single-mantissa-bit XOR forces 0/10 "
-        "up to 100% (0 exp/sign flips, Hamming <= 1; see verify_sparse_pursuit/scaling_law/boundary_defense/toolcall_sleeper for Parts B-E)"
-        if ok else "FAILS — see directed_bits/rows.json"))
+        "OK: projecting the dense Adam #65 delta onto true bf16 single-mantissa-bit XOR forces 0/10 "
+        "up to 100% (0 exp/sign flips, Hamming <= 1; see verify_sparse_pursuit/scaling_law/boundary_defense/toolcall_trigger for Parts B-E)"
+        if ok else "FAILS: see directed_bits/rows.json"))
     return 0 if ok else 1
 
 

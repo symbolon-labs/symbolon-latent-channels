@@ -12,11 +12,11 @@ SCRIPTS=(
   verify_sparse_pursuit.py
   verify_scaling_law.py
   verify_boundary_defense.py
-  verify_toolcall_sleeper.py
+  verify_toolcall_trigger.py
   verify_tradeoff_seeds.py
   verify_geometry_decompose.py
   verify_apc_remote.py
-  verify_weapon.py
+  verify_composed_chain.py
   verify_defense_registry.py
   verify_vision_pixel.py
   verify_codebook_factory.py
@@ -82,10 +82,10 @@ else
   echo "  NEGATIVE_OK: verify_scaling_law failed closed on 1 faulted control row"
 fi
 
-# Neg 3: fault 1 HTTP 200 status to 401 in toolcall_sleeper
+# Neg 3: fault 1 HTTP 200 status to 401 in toolcall_trigger
 mkdir -p "$tmp/n3/hardware_bits_20261122/runs"
-cp -R studies/hardware_bits_20261122/runs/toolcall_sleeper "$tmp/n3/hardware_bits_20261122/runs/"
-"$PY" - "$tmp/n3/hardware_bits_20261122/runs/toolcall_sleeper/part2a_items.jsonl" <<'EOF'
+cp -R studies/hardware_bits_20261122/runs/toolcall_trigger "$tmp/n3/hardware_bits_20261122/runs/"
+"$PY" - "$tmp/n3/hardware_bits_20261122/runs/toolcall_trigger/part2a_items.jsonl" <<'EOF'
 import json, sys, pathlib
 p = pathlib.Path(sys.argv[1])
 rows = [json.loads(l) for l in p.read_text().splitlines() if l.strip()]
@@ -94,10 +94,10 @@ for r in rows:
         r["http_status"] = 401; break
 p.write_text("\n".join(json.dumps(r) for r in rows) + "\n")
 EOF
-if "$PY" checks/verify_toolcall_sleeper.py "$tmp/n3" >/dev/null 2>&1; then
-  echo "NEGATIVE_FAIL: verify_toolcall_sleeper accepted HTTP 401"; exit 1
+if "$PY" checks/verify_toolcall_trigger.py "$tmp/n3" >/dev/null 2>&1; then
+  echo "NEGATIVE_FAIL: verify_toolcall_trigger accepted HTTP 401"; exit 1
 else
-  echo "  NEGATIVE_OK: verify_toolcall_sleeper failed closed on HTTP 401"
+  echo "  NEGATIVE_OK: verify_toolcall_trigger failed closed on HTTP 401"
 fi
 
 # Neg 4: inject 1 flip into protected token 0 in boundary_defense

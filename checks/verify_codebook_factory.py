@@ -32,7 +32,7 @@ def main() -> int:
     man = json.loads(man_p.read_text())
     rows = json.loads(rows_p.read_text())
     if not rows:
-        print(f"{rows_p} is empty — FAIL CLOSED")
+        print(f"{rows_p} is empty: FAIL CLOSED")
         return 1
     ok = True
 

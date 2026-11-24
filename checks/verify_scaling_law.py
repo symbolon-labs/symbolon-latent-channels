@@ -2,7 +2,7 @@
 """Fail-closed PER-ITEM recount for the 4-family / 6-model sparse bit-flip scaling law (Part E).
 
 Recounts every single model strictly from per-item decode rows (runs/scaling_law/items.jsonl)
-and each model's exact flip coordinates (flips.json) — NEVER trusts summary strings:
+and each model's exact flip coordinates (flips.json): NEVER trusts summary strings:
   - Qwen/Qwen2.5-0.5B-Instruct         (0.5B)
   - unsloth/Llama-3.2-1B-Instruct      (1.0B)
   - Qwen/Qwen3-1.7B                    (1.7B)
@@ -157,9 +157,9 @@ def main() -> int:
         ok = False
 
     print("\nRECOUNT SCALING-LAW: " + (
-        "OK — all 6 models across 4 families recounted directly from per-item items.jsonl & flips.json "
+        "OK: all 6 models across 4 families recounted directly from per-item items.jsonl & flips.json "
         "(12/12 MPS==CPU, 0/12 base, 0/12x5 uni & pos controls, >=81% boundary blocks, beta_N < 0)"
-        if ok else "FAILS — see above"))
+        if ok else "FAILS: see above"))
     return 0 if ok else 1
 
 

@@ -2,7 +2,7 @@
 """Fail-closed PER-ITEM recount for sparse true bf16 single-mantissa-bit XOR implants (Parts B1-B3).
 
 Recounts directly from raw per-item decode files (items.jsonl) and exact flip coordinates
-(flips.json) — NEVER trusts pre-aggregated summary strings:
+(flips.json): NEVER trusts pre-aggregated summary strings:
   - runs/sparse_pursuit/       (Qwen3-1.7B single-domain, 4 ship fit -> 5/6 ship, 0/10 gen)
   - runs/sparse_pursuit_mixed/ (Qwen3-1.7B mixed-domain, 8 fit -> 12/12 held-out)
   - runs/sparse_pursuit_llama/ (Llama-3.2-1B-Instruct cross-family, 8 fit -> 12/12 held-out)
@@ -84,7 +84,7 @@ def recount_run(run_name, exp_fit_n, exp_held_ship, exp_held_gen, min_ship, min_
         print(f"FAILS ({run_name}): unexpected split sizes fit={len(base_fit_qs)}, held={len(base_held_qs)}")
         ok = False
     if not set(base_fit_qs).isdisjoint(set(base_held_qs)):
-        print(f"FAILS ({run_name}): LEAK — fit and held questions overlap!")
+        print(f"FAILS ({run_name}): LEAK: fit and held questions overlap!")
         ok = False
 
     def score_arm(arm_name):
@@ -147,9 +147,9 @@ def main() -> int:
     ok = recount_run("sparse_pursuit_mixed", 8, 6, 6, 6, 6, 512) and ok
     ok = recount_run("sparse_pursuit_llama", 8, 6, 6, 6, 6, 1024) and ok
     print("\nRECOUNT SPARSE-PURSUIT: " + (
-        "OK — all 3 runs recounted directly from per-item decode rows & flips.json "
+        "OK: all 3 runs recounted directly from per-item decode rows & flips.json "
         "(strictly disjoint splits, 0 base, MPS==CPU, 0/N across all 60 random control trials)"
-        if ok else "FAILS — see above"))
+        if ok else "FAILS: see above"))
     return 0 if ok else 1
 
 

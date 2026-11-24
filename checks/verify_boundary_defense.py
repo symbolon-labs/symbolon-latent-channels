@@ -105,9 +105,9 @@ def main() -> int:
                     ok = False
 
     print("\nRECOUNT BOUNDARY-DEFENSE: " + (
-        "OK — <2.2% Block 0 + Final Block lock verified from per-item JSONL & flips.json "
+        "OK: <2.2% Block 0 + Final Block lock verified from per-item JSONL & flips.json "
         "(0 flips in protected tokens, MPS==CPU, blocks 12/12 up to >=1,792-1,920 flips)"
-        if ok else "FAILS — see above"))
+        if ok else "FAILS: see above"))
     return 0 if ok else 1
 
 

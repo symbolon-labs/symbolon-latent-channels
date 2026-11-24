@@ -1,4 +1,4 @@
-# Report: D3.1 — Forcing↔silence tradeoff with clean controls, fixed RNG, and cluster CIs (rebuilt 2026-11-23)
+# Report: D3.1: Forcing↔silence tradeoff with clean controls, fixed RNG, and cluster CIs (rebuilt 2026-11-23)
 
 Date: 2026-11-23 (supersedes the 2026-11-22 draft). Study: `studies/theory_20261121/`.
 Recount: `checks/verify_tradeoff_seeds.py`. Pair: Qwen3-1.7B / Qwen2.5-1.5B, frozen codebook
@@ -24,9 +24,9 @@ leave-one-out monitor ratios**, and **item / 2-way (item × seed) cluster bootst
 **The honest headline:** Forcing and silence **do not coincide**. Rescaling the frozen codebook
 produces a clean monotone drop from **100% targeted forcing (`22.5×` benign spread) → `0%`
 under greedy decoding at `f ≤ 0.05` (`≤ 1.29×`)**. Under `temp=0.7` sampling, the quiet budgets
-(`f=0.05` at `1.29×` and `f=0.02` at `0.77×`) produce `wrong_exec = 0.104` — **statistically
+(`f=0.05` at `1.29×` and `f=0.02` at `0.77×`) produce `wrong_exec = 0.104`: **statistically
 indistinguishable from the unperturbed clean baseline (`0.083`), the same-tool negative control
-(`0.100–0.125`), and the norm-matched random-delta control (`0.108–0.117`)**. There is **no**
+(`0.100-0.125`), and the norm-matched random-delta control (`0.108-0.117`)**. There is **no**
 statistically distinguishable quiet-corner slow-drip forcing.
 
 ---
@@ -41,10 +41,10 @@ statistically distinguishable quiet-corner slow-drip forcing.
 | **`0.1`** | `2.34` `[2.32, 2.36]` | `0.042` / `0.042` | `0.000` | `0.129` `[0.058, 0.217]` | `0.175` | `0.042` | `0.058` |
 | **`0.05`** | `1.29` `[1.25, 1.33]` | **`0.000`** / **`0.000`** | `0.000` | `0.058` `[0.021, 0.108]` | `0.104` | `0.125` | `0.117` |
 | **`0.02`** | `0.77` `[0.69, 0.85]` | **`0.000`** / **`0.000`** | `0.000` | `0.054` `[0.017, 0.100]` | `0.104` | `0.100` | `0.108` |
-| **`0.0` (clean)** | — | `0.000` (wrong) | — | — | **`0.083`** `[0.008, 0.192]` | — | — |
+| **`0.0` (clean)** |: | `0.000` (wrong) |: |: | **`0.083`** `[0.008, 0.192]` |: |: |
 
 Calibration: leave-one-out 95th-percentile benign self-distance = `2.746` (`18/24` subsample 95th
-median = `3.074`, 5th–95th `[2.739, 3.468]`). Held-out (`n=12` items) matches the full 24-item
+median = `3.074`, 5th-95th `[2.739, 3.468]`). Held-out (`n=12` items) matches the full 24-item
 curve closely at every point (`greedy` held-out: `1.000 -> 0.875 -> 0.375 -> 0.042 -> 0.000 -> 0.000`;
 `sampled` held-out clean `wrong_exec = 0.100 [0.000, 0.250]`).
 
@@ -57,6 +57,6 @@ curve closely at every point (`greedy` held-out: `1.000 -> 0.875 -> 0.375 -> 0.0
 - "Quiet" (`ratio < 1` at `f=0.02`, `0.77×`) means below our kNN monitor's benign 95th percentile,
   not undetectable by arbitrary monitors.
 - Note why `sampled target_exec ≈ 0.054` at `f=0.02` is pure chance: under `temp=0.7` sampling,
-  clean prompts already mis-execute a wrong tool `0.083–0.100` of the time (`random` `0.108`,
+  clean prompts already mis-execute a wrong tool `0.083-0.100` of the time (`random` `0.108`,
   `same-tool` `0.100`), and roughly half of wrong-tool errors on `target != expected` happen to
   land on the target tool (`~0.054`).

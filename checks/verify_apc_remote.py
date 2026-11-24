@@ -8,7 +8,7 @@ Honest scope (audited 2026-11-23):
     (flagging the 4 overlapping train questions explicitly).
   - Verifies natural (0/10) and random (0/10) benign baselines.
   - Verifies CUDA value-transparency from runs_box_final/discriminator/rows.json: cold prefill
-    (1_cold) and cache hit (3_hit) emit the same top-1 ' Ref' token within 0.01 logprob —
+    (1_cold) and cache hit (3_hit) emit the same top-1 ' Ref' token within 0.01 logprob : 
     confirming the text causes the forcing and CUDA APC preserves it transparently (NOT
     API-only first-occupier cache poisoning).
 
@@ -40,7 +40,7 @@ def main() -> int:
     rp = run_root / "apc_remote" / "rows.json"
     dp = run_root / "discriminator" / "rows.json"
     if not rp.exists() or not dp.exists():
-        print(f"MISSING {rp} or {dp} — no rows, no recount")
+        print(f"MISSING {rp} or {dp}: no rows, no recount")
         return 1
     rows = json.loads(rp.read_text())
     disc = json.loads(dp.read_text())
@@ -91,10 +91,10 @@ def main() -> int:
         ok = False
 
     print("\nRECOUNT APC-REMOTE: " + (
-        "OK — shared-prefix GCG text forces leading 'Ref' (10/10 total, 6/6 strictly held-out "
+        "OK: shared-prefix GCG text forces leading 'Ref' (10/10 total, 6/6 strictly held-out "
         "vs 0/10 benign) and CUDA APC is value-transparent (cold == hit); note this is "
         "text-driven shared-prefix injection preserved by APC, not API-only cache poisoning"
-        if ok else "CHECK — see rows.json"))
+        if ok else "CHECK: see rows.json"))
     return 0 if ok else 1
 
 

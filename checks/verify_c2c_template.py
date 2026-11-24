@@ -25,7 +25,7 @@ def main():
     if P is None:
         # fail closed: the corrected (fit-question-free) artifact is the only one this
         # checker can vouch for; the legacy template_main rows cannot prove T-0.
-        print(f"corrected template artifact missing (want {CANDIDATES[0]}) — FAIL CLOSED")
+        print(f"corrected template artifact missing (want {CANDIDATES[0]}): FAIL CLOSED")
         print("VERIFY_DONE")
         return 2
     rows = json.load(open(P))
