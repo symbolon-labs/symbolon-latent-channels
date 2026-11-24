@@ -1,6 +1,6 @@
 # Attacks on unauthenticated latent channels between AI models: technical report
 
-Symbolon Labs. Date: 2026-11-13 (rev 07, audited and publicly released 2026-11-24).
+Symbolon Labs. Date: 2026-11-13 (rev 10, audited and first published publicly 2026-11-24).
 This report uses ASD-STE100 Simplified Technical English where practical.
 
 **TL;DR**
@@ -532,22 +532,32 @@ transfer (rebuilt & closed).** Measuring the true broadcast-space Jacobian (`d =
 
 ## 9. Related work
 
-Our novelty is attacking **activations and KV cache tensors across a model handoff**, rather
-than model weights or raw prompt text:
+Prior work has already shown that KV caches can be flipped or overwritten inside a single model.
+Our contribution rests on three specific differences: **we restrict KV bit flips strictly to
+bfloat16 mantissa bits (zero exponent or sign changes), we drive a multi-token JSON tool call
+that executes under bearer credentials, and we attack unauthenticated model-to-model latent
+handoffs across bridges and modalities:**
 
-* **Attention sinks:** StreamingLLM (Xiao et al., ICLR 2024) demonstrated that initial sequence
-  tokens absorb disproportionate attention mass in autoregressive transformers. Our Tier B
-  concentration (`81.5%-100.0%`) in Block 0 and the Final Prefix Block aligns with that leverage.
-* **Weight and KV bit-flip attacks:** Terminal Brain Damage (Hong et al., USENIX Security 2019)
-  and DeepHammer (Yao et al., USENIX Security 2020) showed targeted weight bit flips degrade or
-  redirect neural networks; Yamamoto & Matsuura (*Bit-Flip Vulnerability of Shared KV-Cache
-  Blocks in LLM Serving Systems*, arXiv:2604.17249, 2026) analyzed undirected bit-flip faults in
-  shared vLLM prefix blocks. We show single-mantissa bit flips in resident KV activations alone
-  force held-out first tokens across six models and a 6-token JSON tool call on Qwen3-1.7B.
+* **KV cache bit flips and manipulation:** Nahian et al. (*CacheTrap*, arXiv:2511.22681, 2025)
+  demonstrated targeted single-bit flips in a single model's KV cache by flipping the FP16
+  exponent MSB (bit 15) and evaluated hardware fault delivery. Ganesh, Iyer, & Ananthan
+  (*Whose Narrative is it Anyway? A KV Cache Manipulation Attack*, arXiv:2511.12752, 2025)
+  showed block-level KV cache overwriting (*History Swapping*) redirects a single model's
+  narrative trajectory without changing the prompt. Yamamoto & Matsuura (*Bit-Flip Vulnerability
+  of Shared KV-Cache Blocks in LLM Serving Systems*, arXiv:2604.17249, 2026) analyzed undirected
+  bit-flip faults in shared vLLM prefix blocks. Building on those single-model findings, we
+  restrict edits strictly to mantissa bits, show boundary-block concentration across four model
+  families, force an executed 6-token HTTP 200 tool call on Qwen3-1.7B, and evaluate `<2.2%`
+  boundary-block locks.
+* **Weight bit flips and attention sinks:** Terminal Brain Damage (Hong et al., USENIX Security
+  2019) and DeepHammer (Yao et al., USENIX Security 2020) targeted model weights; StreamingLLM
+  (Xiao et al., ICLR 2024) identified initial-token attention sinks, matching our Tier B
+  concentration (`81.5%-100.0%`) in Block 0 and the Final Prefix Block.
 * **Latent-wire integrity:** Brito & Baquero (*When Latent Agents Lie: KV-Cache Integrity in
-  Multi-Agent LLM Collaboration*, arXiv:2606.28958, 2026) proposed HMAC-SHA256 manifests for
-  coordinator-specialist KV exchange and noted that a compromised signing endpoint sits outside
-  transport integrity; our 24/24 sender-signed test confirms that boundary directly.
+  Multi-Agent LLM Collaboration*, arXiv:2606.28958, 2026) proposed an HMAC-SHA256 manifest
+  binding specialist identity, session, model, visible commitment, tensor metadata, and payload
+  digest, noting that a compromised signing endpoint sits outside transport integrity; our 24/24
+  sender-signed test confirms that boundary directly.
 * **Tool-use prompt injection and host allowlists:** Indirect prompt injection (Greshake et al.,
   2023), OWASP LLM06:2025, Piotr Czapla (*The unauthorized tool call problem*, Answer.AI,
   answer.ai/posts/2026-01-20-toolcalling.html, 2026), and Iyer & Babu (*ContractGuard*,
@@ -582,10 +592,13 @@ than model weights or raw prompt text:
   3.12.14, PyTorch 2.15.0, and Transformers 4.52.4; the live CUDA vLLM APC run used an AWS g4dn
   NVIDIA Tesla T4 (16 GB, compute capability 7.5) with vLLM 0.11.0 (`torch.float16`).
 * **Disclosure:** `nics-efc/C2C_Fuser` maintainers were contacted privately on 2026-10-24 with a
-  two-week window (through 2026-11-07); no response was received, and findings are published
-  publicly on 2026-11-24 (31 days after disclosure). CacheBack, AVP, and Interlat were tested
-  locally against public research repositories without separate prior vendor outreach and are
-  reported as class-level demonstrations. No live production service was tested.
+  two-week window (through 2026-11-07); no response was received, and findings were first
+  published publicly on 2026-11-24 (31 days after disclosure). CacheBack, AVP, and Interlat were
+  tested locally against public research repositories without separate prior vendor outreach and
+  are reported as class-level demonstrations. No live production service was tested.
+* **Hardware fault-delivery limit:** While Nahian et al. (arXiv:2511.22681) establish physical
+  fault-injection feasibility for single KV bit flips on GPU memory, we did not measure physical
+  DRAM/HBM Rowhammer or GPUHammer delivery of 64 to 352 targeted mantissa flips ourselves.
 * **Changelog:**
   * rev 01 (2026-10-24): Initial Tier A C2C text-bridge tool execution (16/16), black-box (7/8),
     and private disclosure to C2C_Fuser (14-day window through 2026-11-07).
@@ -606,3 +619,6 @@ than model weights or raw prompt text:
     scoped multi-tenant APC to Tier B, separated internal (78/12) vs public (13/4) test counts,
     fixed Tier B control denominators (0/720 1x / 0/960 total and 0/160), led with `beta_params`
     while noting borderline `beta_N`, added full verified citations and Tesla T4 specs (`v1.3`).
+  * rev 10 (2026-11-24): Positioned Related Work and Limits against CacheTrap (arXiv:2511.22681)
+    and Ganesh, Iyer, & Ananthan (arXiv:2511.12752, History Swapping), and clarified disclosure
+    tense (`v1.4`).

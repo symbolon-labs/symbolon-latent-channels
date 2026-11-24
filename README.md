@@ -1,6 +1,6 @@
 # Symbolon: Attacks on Unauthenticated Latent Channels
 
-**Symbolon Labs** · Public research artifact & verification bundle (`R.11`, `v1.3`, 2026-11-24)
+**Symbolon Labs** · Public research artifact & verification bundle (`R.11`, `v1.4`, 2026-11-24)
 
 **TL;DR**
 1. Latent handoffs (KV caches, bridges, pooled vectors) cross model boundaries without authentication or intent checks.
@@ -86,18 +86,18 @@ python3.12 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 ## Related work
 
-Our novelty is attacking **activations and KV cache tensors at the handoff** rather than model weights or prompt text:
+Prior work has already shown that KV caches can be flipped or overwritten inside a single model. Our contribution rests on three specific differences: **we restrict KV bit flips strictly to `bfloat16` mantissa bits (zero exponent or sign flips), we drive a multi-token JSON tool call that executes under bearer credentials, and we attack unauthenticated model-to-model latent handoffs across bridges and modalities:**
 
-- **Attention sinks:** StreamingLLM (Xiao et al., ICLR 2024) identified attention concentration on initial tokens; our Tier B flips concentrate `81.5%` to `100%` in Block 0 and the Final Prefix Block.
-- **Weight and KV bit-flip attacks:** Terminal Brain Damage (Hong et al., USENIX Security 2019), DeepHammer (Yao et al., USENIX Security 2020), and Yamamoto & Matsuura (*Bit-Flip Vulnerability of Shared KV-Cache Blocks in LLM Serving Systems*, [`arXiv:2604.17249`](https://arxiv.org/abs/2604.17249), 2026) studied weight and KV fault attacks; we demonstrate targeted mantissa-only KV flips forcing held-out first tokens across six models and a 6-token JSON tool call on `Qwen3-1.7B`.
-- **Latent-wire integrity:** Brito & Baquero (*When Latent Agents Lie: KV-Cache Integrity in Multi-Agent LLM Collaboration*, [`arXiv:2606.28958`](https://arxiv.org/abs/2606.28958), 2026) proposed HMAC-SHA256 manifests for coordinator-specialist KV exchange and noted that a compromised signing endpoint sits outside transport integrity; our `24/24` sender-signed test confirms that boundary directly.
+- **KV cache bit flips and manipulation:** Nahian et al. (*CacheTrap*, [`arXiv:2511.22681`](https://arxiv.org/abs/2511.22681), 2025) demonstrated targeted single-bit flips in a single model's KV cache by flipping the FP16 exponent MSB (bit 15) and evaluated hardware fault delivery; Ganesh, Iyer, & Ananthan (*Whose Narrative is it Anyway? A KV Cache Manipulation Attack*, [`arXiv:2511.12752`](https://arxiv.org/abs/2511.12752), 2025) showed block-level KV overwriting (*History Swapping*) redirects a single model's narrative trajectory; Yamamoto & Matsuura (*Bit-Flip Vulnerability of Shared KV-Cache Blocks in LLM Serving Systems*, [`arXiv:2604.17249`](https://arxiv.org/abs/2604.17249), 2026) analyzed undirected bit-flip faults in shared vLLM prefix blocks. We restrict edits strictly to mantissa bits, show boundary-block concentration across four model families, force an executed 6-token HTTP 200 tool call on `Qwen3-1.7B`, and evaluate `<2.2%` boundary-block locks.
+- **Weight bit flips and attention sinks:** Terminal Brain Damage (Hong et al., USENIX Security 2019) and DeepHammer (Yao et al., USENIX Security 2020) targeted model weights; StreamingLLM (Xiao et al., ICLR 2024) identified initial-token attention sinks, matching our Tier B concentration in Block 0 and the Final Prefix Block.
+- **Latent-wire integrity:** Brito & Baquero (*When Latent Agents Lie: KV-Cache Integrity in Multi-Agent LLM Collaboration*, [`arXiv:2606.28958`](https://arxiv.org/abs/2606.28958), 2026) proposed an HMAC-SHA256 manifest binding specialist identity, session, model, visible commitment, tensor metadata, and payload digest, noting that a compromised signing endpoint sits outside transport integrity; our `24/24` sender-signed test confirms that boundary directly.
 - **Tool-use prompt injection and host allowlists:** Indirect prompt injection (Greshake et al., 2023), OWASP LLM06:2025, Piotr Czapla (*The unauthorized tool call problem*, Answer.AI, [`answer.ai/posts/2026-01-20-toolcalling.html`](https://answer.ai/posts/2026-01-20-toolcalling.html), 2026), and Iyer & Babu (*ContractGuard*, [`arXiv:2606.18550`](https://arxiv.org/abs/2606.18550), 2026) establish text-level tool steering and host capability boundaries; we show the same failure persists across latent KV bridges.
 
 ---
 
 ## Disclosure and scope
 
-- **Cache-to-Cache (`nics-efc/C2C_Fuser`):** Privately disclosed on `2026-10-24` with a two-week window (through `2026-11-07`); no response received; published publicly on `2026-11-24` (`31` days after disclosure).
+- **Cache-to-Cache (`nics-efc/C2C_Fuser`):** Privately disclosed on `2026-10-24` with a two-week window (through `2026-11-07`); no response received; findings were first published publicly on `2026-11-24` (`31` days after disclosure).
 - **CacheBack, AVP, and Interlat:** Evaluated locally against public research repositories without separate prior vendor outreach and reported as class-level demonstrations.
 - **Zero production targeting:** All experiments ran on open-weight models (`0.5B-8B`) and local mock endpoints. Internal safety-benchmark raw outputs, exploratory offensive notes, and cloud deployment scripts are excluded from this public release.
 
@@ -119,3 +119,4 @@ Our novelty is attacking **activations and KV cache tensors at the handoff** rat
 - **v1.1 (2026-11-24):** Cleaned naming and style across docs and scripts (`verify_composed_chain.py`, `verify_toolcall_trigger.py`).
 - **v1.2 (2026-11-24):** Added 3-line TL;DR, Tier A / Tier B split, deployment scenarios, scoped headline, Wilson 95% CIs, scaling trend `beta` CIs and family confound note, explicit hypothesis labels, related work, ordered recommendations, disclosure notes for all four evaluated projects, and single-command `scripts/reproduce_64flip_toolcall.py`.
 - **v1.3 (2026-11-24):** Corrected disclosure timeline (`31` days, `2026-10-24` to `2026-11-24`), scoped multi-tenant APC explicitly to Tier B, separated internal (`78`/`12`) vs public (`13`/`4`) test counts, fixed Tier B control item-eval denominators (`0/720` 1x / `0/960` total and `0/160`), led scaling with `beta_params` while noting borderline `beta_N`, added full verified citations and Tesla T4 hardware specs, and replaced "independent" / "deployed" phrasing.
+- **v1.4 (2026-11-24):** Positioned Related Work and Limits explicitly against CacheTrap (`arXiv:2511.22681`, FP16 exponent MSB flips and GPU hardware fault delivery) and Ganesh, Iyer, & Ananthan (`arXiv:2511.12752`, History Swapping).
