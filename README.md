@@ -1,13 +1,19 @@
 # Symbolon: Attacks on Unauthenticated Latent Channels
 
-**Symbolon Labs** · Public research artifact & verification bundle (`R.11`, `v1.4`, 2026-11-24)
+**Writeup:** https://symbolonlabs.com/research/unauthenticated-latent-channels/
 
 **TL;DR**
 1. Latent handoffs (KV caches, bridges, pooled vectors) cross model boundaries without authentication or intent checks.
 2. Transport signing (HMAC) fails when the sender or signing seam is compromised (`24/24` `[0.86, 1.00]` sender-signed attacks accepted).
 3. Host-side tool allowlists and argument validation are what actually block unauthorized calls (`57/57` `[0.94, 1.00]` unoffered calls rejected); locking `<2.2%` of KV boundary blocks adds defense in depth (`>3x` to `5x` adaptive flip cost).
 
-Read [`CAVEATS.md`](CAVEATS.md) before quoting any number. Every shipped run in this repository includes its raw per-item decode files (`items.jsonl`), exact bit-flip coordinates (`flips.json`), matched random controls, and standalone stdlib-only automated fail-closed recount scripts (`checks/`).
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="reports/figs/fig1_attack_surface_dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="reports/figs/fig1_attack_surface_light.png">
+  <img alt="Attack surface diagram for unauthenticated latent channels showing Tier A wire delta (69 KB), Tier B bit flips (64 mantissa flips), host allowlist blocking 57/57 unoffered calls, and KV boundary lock raising adaptive flip cost 3x to 5x." src="reports/figs/fig1_attack_surface_light.png" width="760">
+</picture>
+
+**Symbolon Labs** · Public research artifact & verification bundle (`R.11`, `v1.4`, 2026-11-24). Read [`CAVEATS.md`](CAVEATS.md) before quoting any number. Every shipped run in this repository includes its raw per-item decode files (`items.jsonl`), exact bit-flip coordinates (`flips.json`), matched random controls, and standalone stdlib-only automated recount scripts (`checks/`).
 
 ---
 
@@ -32,7 +38,7 @@ We tag every measurement with its threat tier and report Wilson 95% confidence i
 bash checks/verify_all.sh
 ```
 
-Runs all **13 public automated fail-closed recount scripts** directly against the raw per-item artifacts in `studies/` plus **4 negative fault-injection tests** (corrupting a single per-item decode row, control trial, HTTP 200 status, or protected boundary-token flip and confirming every checker exits non-zero). The full internal lab suite covers `78` automated recounts and `12` negative tests across all tracks.
+Runs all **13 public automated recount scripts** directly against the raw per-item artifacts in `studies/` plus **4 negative fault-injection tests** (corrupting a single per-item decode row, control trial, HTTP 200 status, or protected boundary-token flip and confirming every checker exits non-zero). The full internal lab suite covers `78` automated recounts and `12` negative tests across all tracks.
 
 ### 2. Reproduce the live 64-to-288 flip HTTP 200 tool call (`Qwen3-1.7B`)
 
@@ -108,7 +114,7 @@ Prior work has already shown that KV caches can be flipped or overwritten inside
 - `scripts/reproduce_64flip_toolcall.py`: Single-command live reproducer for the 64-to-288 flip HTTP 200 JSON tool-call result.
 - `reports/`: Full STE technical report (`technical_report_ste_20261113.pdf` & `.md`), 7 figures (`reports/figs/`), and individual study reports (`REPORT_DIRECTED_BITS.md`, `REPORT_GEOMETRY.md`, `REPORT_TRADEOFF_SEEDS.md`, `REPORT_REMOTE_VECTOR.md`).
 - `studies/`: Sanitized per-item decodes (`items.jsonl`), exact flip coordinates (`flips.json`), run rows, summaries, and split manifests.
-- `checks/`: 13 stdlib-only automated fail-closed recount scripts + `verify_all.sh` (including 4 negative fault-injection tests).
+- `checks/`: 13 stdlib-only automated recount scripts + `verify_all.sh` (including 4 negative fault-injection tests).
 - `release/`: Local Tier A C2C demo, pinned loader, mock tool server, and `69 KB` `.npz` payloads.
 - `CAVEATS.md`: Scope limits, honest negatives, and boundaries of every claim.
 - `SHA256SUMS`: SHA-256 checksums for every file in the release (`shasum -a 256 -c SHA256SUMS`).
