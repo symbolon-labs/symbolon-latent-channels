@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Self-contained fail-closed verification of all public artifacts in this repository.
-# Runs all 13 recount scripts against ./studies plus negative fault-injection tests.
+# Self-contained automated verification of all public artifacts in this repository.
+# Runs all 14 recount scripts against ./studies plus 7 negative fault-injection tests.
 # Requires only Python 3 (stdlib; no GPU, no model downloads).
 set -euo pipefail
 cd "$(dirname "$0")/.."

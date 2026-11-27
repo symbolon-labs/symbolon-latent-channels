@@ -142,8 +142,9 @@ grow in repetition. The study reports (`reports/`) each carry their own
   endpoint-signing blind spot. And neither released bridge ships a manifest. `REPORT_DEFENSE_TEST.md`.
 - **Caveat on that:** the manifest is necessary, not sufficient. A defence must bind *what the
   cache should be* to a principal the attacker lacks (sender attestation, re-derivation, or a
-  behavioural cross-check). The manifest implementation is from the paper's description, not their
-  code; the 24/24 reject control is what makes it credible. The general form: a transport MAC
+  behavioural cross-check). The manifest implementation was tested against the manifest as described
+  in `arXiv:2606.28958` v1 (not their code; the authors' final design may differ); the 24/24 reject
+  control is what makes it credible. The general form: a transport MAC
   authenticates *"unchanged," not "correct"*, so a sender-side attacker is authoritative: is
   `REPORT_ATTESTATION.md` (route R2).
 - **Broader positioning (2026-11-14).** The modality carriers, the projector-poison technique,
@@ -168,10 +169,11 @@ grow in repetition. The study reports (`reports/`) each carry their own
 
 Per the publication policy of 2026-11-15 (see NEXT_SESSION.md):
 
-* The **cache-implant mechanism** (`studies/persistence_20261113/`): first the local demo
-  (forced token 10/10 across a process restart), and now the **real-vLLM behavioral implant**
+* The **cache-implant mechanism** (`studies/persistence_20261113/`, internal): first the local demo
+  (forced token 10/10 across a process restart), and then the **real-vLLM behavioral implant**
   (live vLLM with APC: base 0/10 natural, poisoned cached blocks 10/10 forced, persisted on the
-  dwell re-check; `checks/verify_apc_implant.py`). Quote only with its boundary: one small model
+  dwell re-check; verified internally, while the public CUDA APC transparency check is
+  `checks/verify_apc_remote.py`). Quote only with its boundary: one small model
   (Qwen2.5-0.5B) served by vLLM, one seed, first-token metric with a degenerate continuation,
   and the injection point is the engine's KV tensors (the compromised-routing-layer model: not
   a through-the-API tensor write). Selective (trigger-conditional) firing is partial: the single
@@ -245,3 +247,31 @@ Per the publication policy of 2026-11-15 (see NEXT_SESSION.md):
   `1.7B`, `2→4/18` on `0.6B`), **yet still collapses `48/48` and `18/18` malformed at `α=1.00`** : 
   proving the cross-pair transfer wall is genuinely **higher-order nonlinearity**, not first-order
   syntax-logit leakage.
+
+## R.12 follow-up: multi-family tool calls, arbitrary arguments, and schema-aware KV locks (2026-11-27)
+
+* **Scope (`studies/multifamily_toolcall_20261126/`, `reports/REPORT_R12.md`, `checks/verify_r12_multifamily_toolcall.py`):**
+  30 audited runs across 4 open-weight 1B to 3.8B models (`Qwen3-1.7B`, `Llama-3.2-1B-Instruct`,
+  `Granite-3.3-2B-Instruct`, `Phi-4-mini-3.8B-Instruct`), `7,974` per-item decode rows, CPU
+  `bfloat16` cross-checks, `0/6,720` matched random control executions (`95% CI [0.000, 0.0006]`),
+  and `3/3` R.12 negative fault-injection tests (`14/14` public automated recounts and `7/7` negative
+  tests across the repository). Models larger than 3.8B were not tested in R.12.
+* **Llama-3.2-1B denominator caveat:** On the one-field `{"tool": "calc"}` task (Gate 1),
+  `Llama-3.2-1B-Instruct` scored `0/12` on clean baseline calendar queries, so its clean held-out
+  evaluation split consists of `n = 6` `search`-only queries (`6/6` at 32 flips) rather than `12`.
+* **Arbitrary arguments (`fit = 4` vs `fit = 8`):** Exact 14-to-18-token attacker-chosen arguments
+  missed the preregistered 3-of-4 >=80% bar at `fit = 4` (`Granite` `10/12` `"audit-export"`,
+  `Llama` `7/12` `"1337*42"` -> `56154`, `Qwen3` `2/12` & `3/12`, `Phi-4` `0/12`). Doubling
+  disjoint training prompts from `4` to `8` jumped `Qwen3-1.7B` to `9/12` (`10/12` CPU) on
+  `"1337*42"` -> `56154` and `12/12` (MPS & CPU) on `"audit-export"`, but that `fit = 8` follow-up
+  ran on `Qwen3-1.7B` only.
+* **Self-correction of R.11's 2-block lock & defense caveats:** Locking only Block 0 + Final 16
+  tokens failed in `7/7` runs on tool-calling prefixes (short few-shot, zero-shot, and ~2.3K-token
+  prefixes) because `98.1% to 99.7%` of adaptive bypass flips relocated into unlocked tool-schema
+  and few-shot tokens. Locking **Block 0 + the contiguous tool-schema tail** restored a `5x to >20x`
+  cost wall in `7/7` runs at `5.1% to 5.5%` (`116 to 128` tokens) of a ~2,300-token cache, **tested
+  up to a 1,280-flip budget under the same sparse-pursuit optimizer**. It is defense in depth, not
+  an unbounded guarantee (`Qwen3-1.7B` still reached `7/12` at 1,280 flips on the 2.3K prefix), and
+  paged serving engines that lock whole 16-token KV blocks incur modest alignment rounding (roughly
+  128 to 144 tokens, ~5.6% to 6.3% on a 2.3K prefix). Physical DRAM/HBM Rowhammer or GPUHammer
+  delivery was not measured.
