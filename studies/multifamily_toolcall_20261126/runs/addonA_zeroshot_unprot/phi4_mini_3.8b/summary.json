@@ -1,0 +1,163 @@
+{
+  "gate": "addonA_zeroshot_unprot",
+  "model_key": "phi4_mini_3.8b",
+  "model_id": "microsoft/Phi-4-mini-instruct",
+  "family": "Phi-4",
+  "protect_boundary": false,
+  "protect_schema": false,
+  "schema_start_tok": null,
+  "protected_token_count": 0,
+  "protected_fraction": 0.0,
+  "protected_token_flips": 0,
+  "target_spec": {
+    "tool": "calc",
+    "target_str": "{\"tool\": \"calc\"}"
+  },
+  "target_n_tokens": 6,
+  "n_prefix_tokens": 414,
+  "n_elements": 27131904,
+  "fit_n": 4,
+  "held_n": 12,
+  "first_80pct_flips": 64,
+  "first_100pct_flips": 96,
+  "final_flips": 160,
+  "final_density": 5.89711654589372e-06,
+  "final_invariants": {
+    "flipped_elems": 160,
+    "total_bit_flips": 160,
+    "max_hamming_per_elem": 1,
+    "exponent_bit_changes": 0,
+    "sign_bit_changes": 0,
+    "rel_l2_norm": 0.003297
+  },
+  "final_held_executed": 12,
+  "final_held_malformed": 0,
+  "final_held_ci": [
+    0.7575,
+    1.0
+  ],
+  "cpu_held_executed": 12,
+  "cpu_held_malformed": 0,
+  "cpu_matches_mps": true,
+  "boundary_stats": {
+    "block0": 65,
+    "block1": 2,
+    "final_block": 30,
+    "boundary_share": 0.5938,
+    "block0_share": 0.4062,
+    "final_block_share": 0.1875,
+    "block1_share": 0.0125
+  },
+  "controls": {
+    "uniform_1x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "posmatched_1x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "uniform_10x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "posmatched_10x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    }
+  },
+  "trajectory": [
+    {
+      "round": 1,
+      "flips": 32,
+      "density": 1.179423309178744e-06,
+      "rel_l2_norm": 0.001393,
+      "fit_tf_loss": 2.1837,
+      "fit_exact": 2,
+      "fit_n": 4,
+      "held_forced_tool": 6,
+      "held_exact_arg": 6,
+      "held_executed": 6,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 51.5
+    },
+    {
+      "round": 2,
+      "flips": 64,
+      "density": 2.358846618357488e-06,
+      "rel_l2_norm": 0.001989,
+      "fit_tf_loss": 1.0248,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 11,
+      "held_exact_arg": 11,
+      "held_executed": 11,
+      "held_malformed": 1,
+      "held_n": 12,
+      "secs": 64.1
+    },
+    {
+      "round": 3,
+      "flips": 96,
+      "density": 3.538269927536232e-06,
+      "rel_l2_norm": 0.002338,
+      "fit_tf_loss": 0.443,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 12,
+      "held_exact_arg": 12,
+      "held_executed": 12,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 75.9
+    },
+    {
+      "round": 4,
+      "flips": 128,
+      "density": 4.717693236714976e-06,
+      "rel_l2_norm": 0.002768,
+      "fit_tf_loss": 0.1499,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 12,
+      "held_exact_arg": 12,
+      "held_executed": 12,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 87.5
+    },
+    {
+      "round": 5,
+      "flips": 160,
+      "density": 5.89711654589372e-06,
+      "rel_l2_norm": 0.003297,
+      "fit_tf_loss": 0.0458,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 12,
+      "held_exact_arg": 12,
+      "held_executed": 12,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 98.9
+    }
+  ],
+  "total_secs": 311.3
+}

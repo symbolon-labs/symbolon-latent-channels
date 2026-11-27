@@ -1,0 +1,3170 @@
+[
+  {
+    "round": 1,
+    "layer": 26,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 26,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 24,
+    "kind": "K",
+    "head": 7,
+    "token": 412,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 26,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 124,
+    "bit": 5
+  },
+  {
+    "round": 1,
+    "layer": 15,
+    "kind": "K",
+    "head": 3,
+    "token": 445,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 26,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 24,
+    "kind": "K",
+    "head": 7,
+    "token": 412,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 1,
+    "kind": "K",
+    "head": 7,
+    "token": 449,
+    "dim": 52,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 26,
+    "kind": "K",
+    "head": 1,
+    "token": 412,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 24,
+    "kind": "K",
+    "head": 7,
+    "token": 412,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 13,
+    "kind": "K",
+    "head": 5,
+    "token": 430,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 15,
+    "kind": "K",
+    "head": 3,
+    "token": 445,
+    "dim": 61,
+    "bit": 4
+  },
+  {
+    "round": 1,
+    "layer": 25,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 22,
+    "kind": "K",
+    "head": 3,
+    "token": 412,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 21,
+    "kind": "K",
+    "head": 0,
+    "token": 463,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 22,
+    "kind": "K",
+    "head": 3,
+    "token": 403,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 21,
+    "kind": "K",
+    "head": 0,
+    "token": 463,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 26,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 62,
+    "bit": 4
+  },
+  {
+    "round": 1,
+    "layer": 18,
+    "kind": "K",
+    "head": 1,
+    "token": 463,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 22,
+    "kind": "K",
+    "head": 3,
+    "token": 412,
+    "dim": 59,
+    "bit": 5
+  },
+  {
+    "round": 1,
+    "layer": 19,
+    "kind": "K",
+    "head": 0,
+    "token": 463,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 26,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 119,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 19,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 18,
+    "kind": "K",
+    "head": 1,
+    "token": 463,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 26,
+    "kind": "K",
+    "head": 1,
+    "token": 421,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 16,
+    "kind": "K",
+    "head": 3,
+    "token": 427,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 16,
+    "kind": "K",
+    "head": 7,
+    "token": 445,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 17,
+    "kind": "K",
+    "head": 4,
+    "token": 419,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 16,
+    "kind": "K",
+    "head": 4,
+    "token": 446,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 24,
+    "kind": "K",
+    "head": 3,
+    "token": 412,
+    "dim": 126,
+    "bit": 5
+  },
+  {
+    "round": 1,
+    "layer": 23,
+    "kind": "K",
+    "head": 0,
+    "token": 412,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 1,
+    "layer": 22,
+    "kind": "K",
+    "head": 3,
+    "token": 412,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 18,
+    "kind": "K",
+    "head": 1,
+    "token": 445,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 25,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 18,
+    "kind": "K",
+    "head": 1,
+    "token": 463,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 18,
+    "kind": "K",
+    "head": 1,
+    "token": 463,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 18,
+    "kind": "K",
+    "head": 2,
+    "token": 463,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 13,
+    "kind": "K",
+    "head": 5,
+    "token": 430,
+    "dim": 122,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 21,
+    "kind": "K",
+    "head": 6,
+    "token": 445,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 26,
+    "kind": "K",
+    "head": 1,
+    "token": 445,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 26,
+    "kind": "K",
+    "head": 1,
+    "token": 403,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 17,
+    "kind": "K",
+    "head": 4,
+    "token": 419,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 21,
+    "kind": "K",
+    "head": 6,
+    "token": 445,
+    "dim": 63,
+    "bit": 5
+  },
+  {
+    "round": 2,
+    "layer": 13,
+    "kind": "K",
+    "head": 3,
+    "token": 401,
+    "dim": 121,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 13,
+    "kind": "K",
+    "head": 5,
+    "token": 430,
+    "dim": 97,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 20,
+    "kind": "K",
+    "head": 7,
+    "token": 445,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 400,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 14,
+    "kind": "K",
+    "head": 7,
+    "token": 399,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 19,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 22,
+    "kind": "K",
+    "head": 3,
+    "token": 403,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 17,
+    "kind": "K",
+    "head": 6,
+    "token": 464,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 19,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 113,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 25,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 8,
+    "kind": "K",
+    "head": 3,
+    "token": 464,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 17,
+    "kind": "K",
+    "head": 4,
+    "token": 419,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 9,
+    "kind": "K",
+    "head": 1,
+    "token": 399,
+    "dim": 121,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 20,
+    "kind": "K",
+    "head": 5,
+    "token": 445,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 13,
+    "kind": "K",
+    "head": 0,
+    "token": 446,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 26,
+    "kind": "K",
+    "head": 1,
+    "token": 403,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 21,
+    "kind": "K",
+    "head": 6,
+    "token": 412,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 20,
+    "kind": "K",
+    "head": 2,
+    "token": 399,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 20,
+    "kind": "K",
+    "head": 5,
+    "token": 445,
+    "dim": 126,
+    "bit": 5
+  },
+  {
+    "round": 2,
+    "layer": 17,
+    "kind": "K",
+    "head": 4,
+    "token": 422,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 2,
+    "layer": 11,
+    "kind": "K",
+    "head": 6,
+    "token": 409,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 16,
+    "kind": "K",
+    "head": 7,
+    "token": 413,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 9,
+    "kind": "K",
+    "head": 1,
+    "token": 399,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 9,
+    "kind": "K",
+    "head": 1,
+    "token": 399,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 385,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 20,
+    "kind": "K",
+    "head": 2,
+    "token": 399,
+    "dim": 124,
+    "bit": 5
+  },
+  {
+    "round": 3,
+    "layer": 16,
+    "kind": "K",
+    "head": 7,
+    "token": 427,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 57,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 16,
+    "kind": "K",
+    "head": 0,
+    "token": 430,
+    "dim": 58,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 16,
+    "kind": "K",
+    "head": 0,
+    "token": 465,
+    "dim": 58,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 9,
+    "kind": "K",
+    "head": 4,
+    "token": 399,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 17,
+    "kind": "K",
+    "head": 2,
+    "token": 448,
+    "dim": 120,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 16,
+    "kind": "K",
+    "head": 7,
+    "token": 413,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 16,
+    "kind": "K",
+    "head": 7,
+    "token": 440,
+    "dim": 121,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 16,
+    "kind": "K",
+    "head": 0,
+    "token": 447,
+    "dim": 56,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 12,
+    "kind": "K",
+    "head": 0,
+    "token": 446,
+    "dim": 49,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 22,
+    "kind": "K",
+    "head": 0,
+    "token": 405,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 9,
+    "kind": "K",
+    "head": 1,
+    "token": 399,
+    "dim": 58,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 4,
+    "kind": "K",
+    "head": 6,
+    "token": 450,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 23,
+    "kind": "K",
+    "head": 3,
+    "token": 440,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 6,
+    "kind": "K",
+    "head": 3,
+    "token": 439,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 18,
+    "kind": "K",
+    "head": 1,
+    "token": 441,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 6,
+    "kind": "K",
+    "head": 3,
+    "token": 440,
+    "dim": 118,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 3,
+    "kind": "K",
+    "head": 6,
+    "token": 452,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 8,
+    "kind": "K",
+    "head": 2,
+    "token": 401,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 9,
+    "kind": "K",
+    "head": 2,
+    "token": 442,
+    "dim": 50,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 14,
+    "kind": "K",
+    "head": 3,
+    "token": 420,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 17,
+    "kind": "K",
+    "head": 6,
+    "token": 398,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 16,
+    "kind": "K",
+    "head": 7,
+    "token": 413,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 9,
+    "kind": "K",
+    "head": 6,
+    "token": 440,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 16,
+    "kind": "K",
+    "head": 0,
+    "token": 447,
+    "dim": 57,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 9,
+    "kind": "K",
+    "head": 2,
+    "token": 442,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 3,
+    "layer": 16,
+    "kind": "K",
+    "head": 0,
+    "token": 465,
+    "dim": 57,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 22,
+    "kind": "K",
+    "head": 0,
+    "token": 405,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 385,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 22,
+    "kind": "K",
+    "head": 0,
+    "token": 405,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 22,
+    "kind": "K",
+    "head": 0,
+    "token": 405,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 385,
+    "dim": 122,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 6,
+    "kind": "K",
+    "head": 5,
+    "token": 441,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 3,
+    "kind": "K",
+    "head": 6,
+    "token": 459,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 23,
+    "kind": "K",
+    "head": 3,
+    "token": 440,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 20,
+    "kind": "K",
+    "head": 2,
+    "token": 399,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 13,
+    "kind": "K",
+    "head": 3,
+    "token": 410,
+    "dim": 121,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 399,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 9,
+    "kind": "K",
+    "head": 6,
+    "token": 457,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 114,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 22,
+    "kind": "K",
+    "head": 0,
+    "token": 405,
+    "dim": 121,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 17,
+    "kind": "K",
+    "head": 4,
+    "token": 422,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 60,
+    "bit": 5
+  },
+  {
+    "round": 4,
+    "layer": 26,
+    "kind": "K",
+    "head": 1,
+    "token": 412,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 25,
+    "kind": "V",
+    "head": 2,
+    "token": 412,
+    "dim": 91,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 3,
+    "kind": "K",
+    "head": 6,
+    "token": 440,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 13,
+    "kind": "K",
+    "head": 1,
+    "token": 448,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 9,
+    "kind": "K",
+    "head": 6,
+    "token": 439,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 385,
+    "dim": 51,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 9,
+    "kind": "K",
+    "head": 2,
+    "token": 442,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 6,
+    "kind": "K",
+    "head": 3,
+    "token": 447,
+    "dim": 119,
+    "bit": 5
+  },
+  {
+    "round": 4,
+    "layer": 6,
+    "kind": "K",
+    "head": 3,
+    "token": 447,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 22,
+    "kind": "K",
+    "head": 1,
+    "token": 437,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 4,
+    "kind": "K",
+    "head": 6,
+    "token": 450,
+    "dim": 52,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 6,
+    "kind": "K",
+    "head": 3,
+    "token": 447,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 16,
+    "kind": "K",
+    "head": 3,
+    "token": 441,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 9,
+    "kind": "K",
+    "head": 2,
+    "token": 442,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 4,
+    "layer": 1,
+    "kind": "K",
+    "head": 7,
+    "token": 405,
+    "dim": 52,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 13,
+    "kind": "K",
+    "head": 0,
+    "token": 440,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 12,
+    "kind": "K",
+    "head": 5,
+    "token": 385,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 2,
+    "kind": "K",
+    "head": 1,
+    "token": 458,
+    "dim": 49,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 22,
+    "kind": "K",
+    "head": 0,
+    "token": 405,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 22,
+    "kind": "K",
+    "head": 0,
+    "token": 405,
+    "dim": 104,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 8,
+    "kind": "K",
+    "head": 3,
+    "token": 440,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 385,
+    "dim": 126,
+    "bit": 4
+  },
+  {
+    "round": 5,
+    "layer": 8,
+    "kind": "K",
+    "head": 3,
+    "token": 441,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 385,
+    "dim": 113,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 14,
+    "kind": "K",
+    "head": 5,
+    "token": 396,
+    "dim": 57,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 55,
+    "bit": 5
+  },
+  {
+    "round": 5,
+    "layer": 15,
+    "kind": "K",
+    "head": 1,
+    "token": 464,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 22,
+    "kind": "K",
+    "head": 0,
+    "token": 405,
+    "dim": 54,
+    "bit": 5
+  },
+  {
+    "round": 5,
+    "layer": 11,
+    "kind": "K",
+    "head": 6,
+    "token": 409,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 14,
+    "kind": "K",
+    "head": 7,
+    "token": 398,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 112,
+    "bit": 5
+  },
+  {
+    "round": 5,
+    "layer": 24,
+    "kind": "K",
+    "head": 2,
+    "token": 441,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 15,
+    "kind": "K",
+    "head": 3,
+    "token": 463,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 385,
+    "dim": 54,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 24,
+    "kind": "V",
+    "head": 7,
+    "token": 412,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 11,
+    "kind": "K",
+    "head": 6,
+    "token": 409,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 2,
+    "kind": "K",
+    "head": 2,
+    "token": 401,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 20,
+    "kind": "K",
+    "head": 2,
+    "token": 399,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 15,
+    "kind": "K",
+    "head": 1,
+    "token": 464,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 4,
+    "kind": "K",
+    "head": 6,
+    "token": 395,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 8,
+    "kind": "K",
+    "head": 3,
+    "token": 440,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 24,
+    "kind": "K",
+    "head": 7,
+    "token": 412,
+    "dim": 124,
+    "bit": 5
+  },
+  {
+    "round": 5,
+    "layer": 9,
+    "kind": "K",
+    "head": 1,
+    "token": 399,
+    "dim": 63,
+    "bit": 5
+  },
+  {
+    "round": 5,
+    "layer": 20,
+    "kind": "V",
+    "head": 2,
+    "token": 399,
+    "dim": 9,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 119,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 4,
+    "kind": "K",
+    "head": 6,
+    "token": 458,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 5,
+    "layer": 6,
+    "kind": "K",
+    "head": 5,
+    "token": 441,
+    "dim": 58,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 6,
+    "kind": "K",
+    "head": 5,
+    "token": 459,
+    "dim": 57,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 2,
+    "kind": "K",
+    "head": 5,
+    "token": 440,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 6,
+    "kind": "K",
+    "head": 5,
+    "token": 459,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 6,
+    "kind": "K",
+    "head": 5,
+    "token": 459,
+    "dim": 115,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 6,
+    "kind": "K",
+    "head": 5,
+    "token": 459,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 12,
+    "kind": "K",
+    "head": 7,
+    "token": 399,
+    "dim": 122,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 6,
+    "kind": "V",
+    "head": 5,
+    "token": 459,
+    "dim": 57,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 3,
+    "kind": "K",
+    "head": 5,
+    "token": 441,
+    "dim": 122,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 9,
+    "kind": "V",
+    "head": 1,
+    "token": 399,
+    "dim": 94,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 13,
+    "kind": "K",
+    "head": 1,
+    "token": 448,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 8,
+    "kind": "K",
+    "head": 3,
+    "token": 464,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 6,
+    "kind": "K",
+    "head": 5,
+    "token": 459,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 8,
+    "kind": "K",
+    "head": 3,
+    "token": 441,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 3,
+    "kind": "K",
+    "head": 6,
+    "token": 459,
+    "dim": 48,
+    "bit": 5
+  },
+  {
+    "round": 6,
+    "layer": 9,
+    "kind": "K",
+    "head": 6,
+    "token": 458,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 11,
+    "kind": "K",
+    "head": 5,
+    "token": 399,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 9,
+    "kind": "K",
+    "head": 6,
+    "token": 458,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 3,
+    "kind": "K",
+    "head": 6,
+    "token": 459,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 9,
+    "kind": "V",
+    "head": 4,
+    "token": 399,
+    "dim": 30,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 3,
+    "kind": "V",
+    "head": 5,
+    "token": 459,
+    "dim": 56,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 9,
+    "kind": "K",
+    "head": 6,
+    "token": 458,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 9,
+    "kind": "K",
+    "head": 6,
+    "token": 439,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 10,
+    "kind": "V",
+    "head": 5,
+    "token": 399,
+    "dim": 12,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 6,
+    "kind": "V",
+    "head": 3,
+    "token": 440,
+    "dim": 32,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 8,
+    "kind": "K",
+    "head": 3,
+    "token": 459,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 13,
+    "kind": "K",
+    "head": 1,
+    "token": 448,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 13,
+    "kind": "K",
+    "head": 1,
+    "token": 448,
+    "dim": 119,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 13,
+    "kind": "K",
+    "head": 1,
+    "token": 448,
+    "dim": 125,
+    "bit": 5
+  },
+  {
+    "round": 6,
+    "layer": 1,
+    "kind": "K",
+    "head": 7,
+    "token": 437,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 9,
+    "kind": "K",
+    "head": 4,
+    "token": 399,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 8,
+    "kind": "K",
+    "head": 3,
+    "token": 446,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 6,
+    "layer": 13,
+    "kind": "K",
+    "head": 1,
+    "token": 401,
+    "dim": 125,
+    "bit": 5
+  },
+  {
+    "round": 7,
+    "layer": 6,
+    "kind": "V",
+    "head": 5,
+    "token": 459,
+    "dim": 15,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 13,
+    "kind": "K",
+    "head": 2,
+    "token": 399,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 8,
+    "kind": "K",
+    "head": 2,
+    "token": 401,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 13,
+    "kind": "V",
+    "head": 5,
+    "token": 430,
+    "dim": 44,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 9,
+    "kind": "K",
+    "head": 6,
+    "token": 458,
+    "dim": 117,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 12,
+    "kind": "K",
+    "head": 7,
+    "token": 400,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 14,
+    "kind": "K",
+    "head": 5,
+    "token": 396,
+    "dim": 53,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 6,
+    "kind": "K",
+    "head": 3,
+    "token": 439,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 401,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 16,
+    "kind": "K",
+    "head": 6,
+    "token": 439,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 12,
+    "kind": "K",
+    "head": 7,
+    "token": 399,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 11,
+    "kind": "K",
+    "head": 0,
+    "token": 440,
+    "dim": 116,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 17,
+    "kind": "K",
+    "head": 0,
+    "token": 384,
+    "dim": 122,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 16,
+    "kind": "K",
+    "head": 2,
+    "token": 456,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 385,
+    "dim": 110,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 6,
+    "kind": "K",
+    "head": 4,
+    "token": 463,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 13,
+    "kind": "K",
+    "head": 0,
+    "token": 440,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 22,
+    "kind": "K",
+    "head": 0,
+    "token": 405,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 24,
+    "kind": "K",
+    "head": 7,
+    "token": 412,
+    "dim": 56,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 6,
+    "kind": "K",
+    "head": 5,
+    "token": 459,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 6,
+    "kind": "K",
+    "head": 5,
+    "token": 459,
+    "dim": 55,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 18,
+    "kind": "K",
+    "head": 6,
+    "token": 429,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 385,
+    "dim": 107,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 6,
+    "kind": "K",
+    "head": 3,
+    "token": 439,
+    "dim": 118,
+    "bit": 5
+  },
+  {
+    "round": 7,
+    "layer": 6,
+    "kind": "K",
+    "head": 7,
+    "token": 412,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 15,
+    "kind": "K",
+    "head": 7,
+    "token": 437,
+    "dim": 51,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 24,
+    "kind": "V",
+    "head": 7,
+    "token": 412,
+    "dim": 109,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 12,
+    "kind": "K",
+    "head": 7,
+    "token": 400,
+    "dim": 122,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 14,
+    "kind": "K",
+    "head": 5,
+    "token": 396,
+    "dim": 114,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 13,
+    "kind": "K",
+    "head": 2,
+    "token": 414,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 3,
+    "kind": "K",
+    "head": 7,
+    "token": 401,
+    "dim": 53,
+    "bit": 6
+  },
+  {
+    "round": 7,
+    "layer": 3,
+    "kind": "K",
+    "head": 5,
+    "token": 440,
+    "dim": 121,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 14,
+    "kind": "K",
+    "head": 3,
+    "token": 420,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 21,
+    "kind": "V",
+    "head": 2,
+    "token": 446,
+    "dim": 89,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 11,
+    "kind": "K",
+    "head": 1,
+    "token": 399,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 21,
+    "kind": "V",
+    "head": 2,
+    "token": 446,
+    "dim": 9,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 6,
+    "kind": "K",
+    "head": 5,
+    "token": 437,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 16,
+    "kind": "K",
+    "head": 2,
+    "token": 456,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 14,
+    "kind": "K",
+    "head": 3,
+    "token": 420,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 50,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 17,
+    "kind": "K",
+    "head": 0,
+    "token": 393,
+    "dim": 122,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 97,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 16,
+    "kind": "K",
+    "head": 2,
+    "token": 456,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 22,
+    "kind": "V",
+    "head": 0,
+    "token": 405,
+    "dim": 57,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 18,
+    "kind": "K",
+    "head": 0,
+    "token": 464,
+    "dim": 122,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 22,
+    "kind": "V",
+    "head": 0,
+    "token": 405,
+    "dim": 78,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 17,
+    "kind": "K",
+    "head": 2,
+    "token": 429,
+    "dim": 120,
+    "bit": 5
+  },
+  {
+    "round": 8,
+    "layer": 18,
+    "kind": "K",
+    "head": 0,
+    "token": 464,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 6,
+    "kind": "K",
+    "head": 3,
+    "token": 441,
+    "dim": 118,
+    "bit": 5
+  },
+  {
+    "round": 8,
+    "layer": 4,
+    "kind": "K",
+    "head": 6,
+    "token": 438,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 6,
+    "kind": "K",
+    "head": 3,
+    "token": 441,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 17,
+    "kind": "K",
+    "head": 4,
+    "token": 385,
+    "dim": 121,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 18,
+    "kind": "K",
+    "head": 0,
+    "token": 447,
+    "dim": 63,
+    "bit": 5
+  },
+  {
+    "round": 8,
+    "layer": 22,
+    "kind": "V",
+    "head": 0,
+    "token": 405,
+    "dim": 46,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 1,
+    "kind": "K",
+    "head": 7,
+    "token": 441,
+    "dim": 52,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 18,
+    "kind": "K",
+    "head": 0,
+    "token": 447,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 16,
+    "kind": "K",
+    "head": 4,
+    "token": 400,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 15,
+    "kind": "K",
+    "head": 4,
+    "token": 386,
+    "dim": 56,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 2,
+    "kind": "K",
+    "head": 1,
+    "token": 466,
+    "dim": 49,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 15,
+    "kind": "K",
+    "head": 7,
+    "token": 437,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 22,
+    "kind": "V",
+    "head": 0,
+    "token": 405,
+    "dim": 6,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 12,
+    "kind": "K",
+    "head": 5,
+    "token": 384,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 17,
+    "kind": "K",
+    "head": 0,
+    "token": 386,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 8,
+    "layer": 13,
+    "kind": "V",
+    "head": 0,
+    "token": 440,
+    "dim": 84,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 14,
+    "kind": "K",
+    "head": 3,
+    "token": 420,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 18,
+    "kind": "K",
+    "head": 0,
+    "token": 464,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 14,
+    "kind": "K",
+    "head": 3,
+    "token": 420,
+    "dim": 52,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 18,
+    "kind": "K",
+    "head": 0,
+    "token": 464,
+    "dim": 56,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 18,
+    "kind": "V",
+    "head": 0,
+    "token": 464,
+    "dim": 98,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 6,
+    "kind": "K",
+    "head": 3,
+    "token": 405,
+    "dim": 118,
+    "bit": 5
+  },
+  {
+    "round": 9,
+    "layer": 13,
+    "kind": "K",
+    "head": 3,
+    "token": 401,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 16,
+    "kind": "K",
+    "head": 2,
+    "token": 456,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 16,
+    "kind": "K",
+    "head": 7,
+    "token": 421,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 19,
+    "kind": "K",
+    "head": 2,
+    "token": 428,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 16,
+    "kind": "K",
+    "head": 0,
+    "token": 430,
+    "dim": 56,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 16,
+    "kind": "K",
+    "head": 0,
+    "token": 430,
+    "dim": 121,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 58,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 21,
+    "kind": "V",
+    "head": 2,
+    "token": 446,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 14,
+    "kind": "K",
+    "head": 7,
+    "token": 440,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 28,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 88,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 21,
+    "kind": "V",
+    "head": 2,
+    "token": 446,
+    "dim": 90,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 1,
+    "kind": "K",
+    "head": 7,
+    "token": 459,
+    "dim": 52,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 21,
+    "kind": "V",
+    "head": 2,
+    "token": 446,
+    "dim": 54,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 38,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 11,
+    "kind": "V",
+    "head": 1,
+    "token": 399,
+    "dim": 81,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 18,
+    "kind": "V",
+    "head": 0,
+    "token": 464,
+    "dim": 91,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 21,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 37,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 21,
+    "kind": "K",
+    "head": 4,
+    "token": 427,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 14,
+    "kind": "K",
+    "head": 7,
+    "token": 421,
+    "dim": 63,
+    "bit": 5
+  },
+  {
+    "round": 9,
+    "layer": 16,
+    "kind": "V",
+    "head": 7,
+    "token": 413,
+    "dim": 0,
+    "bit": 5
+  },
+  {
+    "round": 9,
+    "layer": 13,
+    "kind": "K",
+    "head": 3,
+    "token": 410,
+    "dim": 57,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 17,
+    "kind": "K",
+    "head": 6,
+    "token": 463,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 16,
+    "kind": "K",
+    "head": 0,
+    "token": 430,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 9,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 386,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 16,
+    "kind": "K",
+    "head": 3,
+    "token": 427,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 17,
+    "kind": "K",
+    "head": 0,
+    "token": 393,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 16,
+    "kind": "K",
+    "head": 2,
+    "token": 456,
+    "dim": 57,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 16,
+    "kind": "K",
+    "head": 2,
+    "token": 456,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 6,
+    "kind": "V",
+    "head": 5,
+    "token": 459,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 13,
+    "kind": "V",
+    "head": 5,
+    "token": 430,
+    "dim": 73,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 16,
+    "kind": "K",
+    "head": 2,
+    "token": 456,
+    "dim": 27,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 18,
+    "kind": "K",
+    "head": 2,
+    "token": 446,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 16,
+    "kind": "K",
+    "head": 2,
+    "token": 456,
+    "dim": 117,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 26,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 60,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 16,
+    "kind": "K",
+    "head": 3,
+    "token": 402,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 13,
+    "kind": "V",
+    "head": 5,
+    "token": 430,
+    "dim": 49,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 16,
+    "kind": "K",
+    "head": 2,
+    "token": 456,
+    "dim": 120,
+    "bit": 5
+  },
+  {
+    "round": 10,
+    "layer": 13,
+    "kind": "K",
+    "head": 1,
+    "token": 448,
+    "dim": 58,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 17,
+    "kind": "K",
+    "head": 0,
+    "token": 393,
+    "dim": 116,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 14,
+    "kind": "K",
+    "head": 7,
+    "token": 416,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 11,
+    "kind": "K",
+    "head": 5,
+    "token": 390,
+    "dim": 125,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 11,
+    "kind": "K",
+    "head": 3,
+    "token": 401,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 13,
+    "kind": "K",
+    "head": 3,
+    "token": 463,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 16,
+    "kind": "K",
+    "head": 3,
+    "token": 442,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 13,
+    "kind": "V",
+    "head": 1,
+    "token": 448,
+    "dim": 57,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 11,
+    "kind": "K",
+    "head": 0,
+    "token": 440,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 26,
+    "kind": "K",
+    "head": 1,
+    "token": 422,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 16,
+    "kind": "V",
+    "head": 0,
+    "token": 430,
+    "dim": 117,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 15,
+    "kind": "K",
+    "head": 0,
+    "token": 437,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 6,
+    "kind": "K",
+    "head": 3,
+    "token": 457,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 11,
+    "kind": "K",
+    "head": 0,
+    "token": 440,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 16,
+    "kind": "K",
+    "head": 3,
+    "token": 401,
+    "dim": 123,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 26,
+    "kind": "K",
+    "head": 2,
+    "token": 412,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 13,
+    "kind": "K",
+    "head": 3,
+    "token": 401,
+    "dim": 59,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 14,
+    "kind": "K",
+    "head": 3,
+    "token": 422,
+    "dim": 61,
+    "bit": 6
+  },
+  {
+    "round": 10,
+    "layer": 6,
+    "kind": "K",
+    "head": 3,
+    "token": 437,
+    "dim": 118,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 386,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 13,
+    "kind": "K",
+    "head": 5,
+    "token": 430,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 19,
+    "kind": "K",
+    "head": 6,
+    "token": 463,
+    "dim": 124,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 16,
+    "kind": "K",
+    "head": 3,
+    "token": 445,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 12,
+    "kind": "K",
+    "head": 0,
+    "token": 446,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 14,
+    "kind": "K",
+    "head": 7,
+    "token": 416,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 13,
+    "kind": "V",
+    "head": 7,
+    "token": 385,
+    "dim": 90,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 19,
+    "kind": "K",
+    "head": 6,
+    "token": 463,
+    "dim": 62,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 16,
+    "kind": "V",
+    "head": 7,
+    "token": 413,
+    "dim": 105,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 6,
+    "kind": "K",
+    "head": 3,
+    "token": 414,
+    "dim": 118,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 16,
+    "kind": "V",
+    "head": 2,
+    "token": 456,
+    "dim": 18,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 17,
+    "kind": "K",
+    "head": 6,
+    "token": 463,
+    "dim": 58,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 13,
+    "kind": "K",
+    "head": 5,
+    "token": 430,
+    "dim": 61,
+    "bit": 5
+  },
+  {
+    "round": 11,
+    "layer": 14,
+    "kind": "K",
+    "head": 7,
+    "token": 421,
+    "dim": 127,
+    "bit": 5
+  },
+  {
+    "round": 11,
+    "layer": 17,
+    "kind": "K",
+    "head": 2,
+    "token": 447,
+    "dim": 120,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 18,
+    "kind": "K",
+    "head": 0,
+    "token": 464,
+    "dim": 63,
+    "bit": 5
+  },
+  {
+    "round": 11,
+    "layer": 21,
+    "kind": "K",
+    "head": 6,
+    "token": 428,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 15,
+    "kind": "K",
+    "head": 0,
+    "token": 400,
+    "dim": 55,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 16,
+    "kind": "K",
+    "head": 4,
+    "token": 401,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 19,
+    "kind": "K",
+    "head": 6,
+    "token": 463,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 21,
+    "kind": "V",
+    "head": 2,
+    "token": 446,
+    "dim": 10,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 18,
+    "kind": "K",
+    "head": 2,
+    "token": 441,
+    "dim": 63,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 13,
+    "kind": "K",
+    "head": 7,
+    "token": 386,
+    "dim": 122,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 18,
+    "kind": "K",
+    "head": 1,
+    "token": 463,
+    "dim": 118,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 17,
+    "kind": "K",
+    "head": 6,
+    "token": 463,
+    "dim": 121,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 17,
+    "kind": "K",
+    "head": 2,
+    "token": 430,
+    "dim": 120,
+    "bit": 5
+  },
+  {
+    "round": 11,
+    "layer": 16,
+    "kind": "K",
+    "head": 3,
+    "token": 463,
+    "dim": 127,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 13,
+    "kind": "V",
+    "head": 0,
+    "token": 440,
+    "dim": 92,
+    "bit": 5
+  },
+  {
+    "round": 11,
+    "layer": 16,
+    "kind": "V",
+    "head": 7,
+    "token": 413,
+    "dim": 56,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 18,
+    "kind": "K",
+    "head": 1,
+    "token": 463,
+    "dim": 120,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 9,
+    "kind": "K",
+    "head": 4,
+    "token": 399,
+    "dim": 126,
+    "bit": 6
+  },
+  {
+    "round": 11,
+    "layer": 22,
+    "kind": "K",
+    "head": 0,
+    "token": 382,
+    "dim": 63,
+    "bit": 6
+  }
+]

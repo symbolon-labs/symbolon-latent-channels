@@ -1,0 +1,178 @@
+{
+  "gate": "addonA_zeroshot_bnd_only",
+  "model_key": "phi4_mini_3.8b",
+  "model_id": "microsoft/Phi-4-mini-instruct",
+  "family": "Phi-4",
+  "protect_boundary": true,
+  "protect_schema": false,
+  "schema_start_tok": null,
+  "protected_token_count": 32,
+  "protected_fraction": 0.07729,
+  "protected_token_flips": 0,
+  "target_spec": {
+    "tool": "calc",
+    "target_str": "{\"tool\": \"calc\"}"
+  },
+  "target_n_tokens": 6,
+  "n_prefix_tokens": 414,
+  "n_elements": 27131904,
+  "fit_n": 4,
+  "held_n": 12,
+  "first_80pct_flips": 160,
+  "first_100pct_flips": 160,
+  "final_flips": 192,
+  "final_density": 7.076539855072464e-06,
+  "final_invariants": {
+    "flipped_elems": 192,
+    "total_bit_flips": 192,
+    "max_hamming_per_elem": 1,
+    "exponent_bit_changes": 0,
+    "sign_bit_changes": 0,
+    "rel_l2_norm": 0.003833
+  },
+  "final_held_executed": 12,
+  "final_held_malformed": 0,
+  "final_held_ci": [
+    0.7575,
+    1.0
+  ],
+  "cpu_held_executed": 12,
+  "cpu_held_malformed": 0,
+  "cpu_matches_mps": true,
+  "boundary_stats": {
+    "block0": 0,
+    "block1": 4,
+    "final_block": 0,
+    "boundary_share": 0.0,
+    "block0_share": 0.0,
+    "final_block_share": 0.0,
+    "block1_share": 0.0208
+  },
+  "controls": {
+    "uniform_1x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "posmatched_1x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "uniform_10x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "posmatched_10x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    }
+  },
+  "trajectory": [
+    {
+      "round": 1,
+      "flips": 32,
+      "density": 1.179423309178744e-06,
+      "rel_l2_norm": 0.001594,
+      "fit_tf_loss": 2.1837,
+      "fit_exact": 2,
+      "fit_n": 4,
+      "held_forced_tool": 6,
+      "held_exact_arg": 6,
+      "held_executed": 6,
+      "held_malformed": 1,
+      "held_n": 12,
+      "secs": 34.7
+    },
+    {
+      "round": 2,
+      "flips": 64,
+      "density": 2.358846618357488e-06,
+      "rel_l2_norm": 0.002427,
+      "fit_tf_loss": 1.026,
+      "fit_exact": 2,
+      "fit_n": 4,
+      "held_forced_tool": 6,
+      "held_exact_arg": 6,
+      "held_executed": 6,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 46.6
+    },
+    {
+      "round": 3,
+      "flips": 96,
+      "density": 3.538269927536232e-06,
+      "rel_l2_norm": 0.002763,
+      "fit_tf_loss": 0.6203,
+      "fit_exact": 2,
+      "fit_n": 4,
+      "held_forced_tool": 6,
+      "held_exact_arg": 6,
+      "held_executed": 6,
+      "held_malformed": 1,
+      "held_n": 12,
+      "secs": 59.2
+    },
+    {
+      "round": 4,
+      "flips": 128,
+      "density": 4.717693236714976e-06,
+      "rel_l2_norm": 0.003091,
+      "fit_tf_loss": 0.3665,
+      "fit_exact": 2,
+      "fit_n": 4,
+      "held_forced_tool": 7,
+      "held_exact_arg": 7,
+      "held_executed": 7,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 70.7
+    },
+    {
+      "round": 5,
+      "flips": 160,
+      "density": 5.89711654589372e-06,
+      "rel_l2_norm": 0.003373,
+      "fit_tf_loss": 0.1933,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 12,
+      "held_exact_arg": 12,
+      "held_executed": 12,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 82.1
+    },
+    {
+      "round": 6,
+      "flips": 192,
+      "density": 7.076539855072464e-06,
+      "rel_l2_norm": 0.003833,
+      "fit_tf_loss": 0.1002,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 12,
+      "held_exact_arg": 12,
+      "held_executed": 12,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 94.0
+    }
+  ],
+  "total_secs": 278.8
+}

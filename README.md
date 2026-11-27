@@ -1,6 +1,8 @@
 # Symbolon: Attacks on Unauthenticated Latent Channels
 
-**Writeup:** https://symbolonlabs.com/research/unauthenticated-latent-channels/
+**Writeups:**
+- **R.11 (Attacks on unauthenticated latent channels):** https://symbolonlabs.com/research/unauthenticated-latent-channels/
+- **R.12 (Multi-family tool-call bit flips & schema-aware KV locks):** https://symbolonlabs.com/research/schema-aware-kv-locks/
 
 **TL;DR**
 1. Latent handoffs (KV caches, bridges, pooled vectors) cross model boundaries without authentication or intent checks.
@@ -13,7 +15,7 @@
   <img alt="Attack surface diagram for unauthenticated latent channels showing Tier A wire delta (69 KB), Tier B bit flips (64 mantissa flips), host allowlist blocking 57/57 unoffered calls, and KV boundary lock raising adaptive flip cost 3x to 5x." src="reports/figs/fig1_attack_surface_light.png" width="760">
 </picture>
 
-**Symbolon Labs** · Public research artifact & verification bundle (`R.11`, `v1.4`, 2026-11-24). Read [`CAVEATS.md`](CAVEATS.md) before quoting any number. Every shipped run in this repository includes its raw per-item decode files (`items.jsonl`), exact bit-flip coordinates (`flips.json`), matched random controls, and standalone stdlib-only automated recount scripts (`checks/`).
+**Symbolon Labs** · Public research artifact & verification bundle (`R.11` & `R.12`, `v1.5`, 2026-11-27). Read [`CAVEATS.md`](CAVEATS.md) before quoting any number. Every shipped run in this repository includes its raw per-item decode files (`items.jsonl`), exact bit-flip coordinates (`flips.json`), matched random controls, and standalone stdlib-only automated recount scripts (`checks/`).
 
 ---
 
@@ -38,7 +40,7 @@ We tag every measurement with its threat tier and report Wilson 95% confidence i
 bash checks/verify_all.sh
 ```
 
-Runs all **13 public automated recount scripts** directly against the raw per-item artifacts in `studies/` plus **4 negative fault-injection tests** (corrupting a single per-item decode row, control trial, HTTP 200 status, or protected boundary-token flip and confirming every checker exits non-zero). The full internal lab suite covers `78` automated recounts and `12` negative tests across all tracks.
+Runs all **14 public automated recount scripts** directly against the raw per-item artifacts in `studies/` plus **7 negative fault-injection tests** (corrupting a single per-item decode row, control trial, HTTP 200 status, server-evaluated argument result, or protected token flip and confirming every checker exits non-zero). The full internal lab suite covers `79` automated recounts and `15` negative tests across R.11 and R.12.
 
 ### 2. Reproduce the live 64-to-288 flip HTTP 200 tool call (`Qwen3-1.7B`)
 
@@ -126,3 +128,4 @@ Prior work has already shown that KV caches can be flipped or overwritten inside
 - **v1.2 (2026-11-24):** Added 3-line TL;DR, Tier A / Tier B split, deployment scenarios, scoped headline, Wilson 95% CIs, scaling trend `beta` CIs and family confound note, explicit hypothesis labels, related work, ordered recommendations, disclosure notes for all four evaluated projects, and single-command `scripts/reproduce_64flip_toolcall.py`.
 - **v1.3 (2026-11-24):** Corrected disclosure timeline (`31` days, `2026-10-24` to `2026-11-24`), scoped multi-tenant APC explicitly to Tier B, separated internal (`78`/`12`) vs public (`13`/`4`) test counts, fixed Tier B control item-eval denominators (`0/720` 1x / `0/960` total and `0/160`), led scaling with `beta_params` while noting borderline `beta_N`, added full verified citations and Tesla T4 hardware specs, and replaced "independent" / "deployed" phrasing.
 - **v1.4 (2026-11-24):** Positioned Related Work and Limits explicitly against CacheTrap (`arXiv:2511.22681`, FP16 exponent MSB flips and GPU hardware fault delivery) and Ganesh, Iyer, & Ananthan (`arXiv:2511.12752`, History Swapping).
+- **v1.5 (2026-11-27):** Added **R.12** (`studies/multifamily_toolcall_20261126/`, `reports/REPORT_R12.md`, `checks/verify_r12_multifamily_toolcall.py`): 30 audited runs (`7,974` per-item rows, `0/6,720` random controls, `3/3` negative tests) showing multi-token HTTP 200 tool-call forcing across 4 families, arbitrary attacker-chosen arguments (`12/12` `"audit-export"` and `9/12` `"1337*42"` at `fit = 8`), and a 7/7 bypass of R.11's 2-block lock fixed by locking Block 0 + the tool-schema tail (`5.1% to 5.5%` at ~2.3K tokens).

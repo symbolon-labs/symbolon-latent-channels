@@ -1,0 +1,175 @@
+{
+  "gate": "gate1_1field",
+  "model_key": "granite_3.3_2b",
+  "model_id": "ibm-granite/granite-3.3-2b-instruct",
+  "family": "Granite",
+  "protect_boundary": false,
+  "protected_fraction": 0.0,
+  "protected_token_flips": 0,
+  "target_spec": {
+    "tool": "calc",
+    "target_str": "{\"tool\": \"calc\"}"
+  },
+  "target_n_tokens": 6,
+  "n_prefix_tokens": 498,
+  "n_elements": 20398080,
+  "fit_n": 4,
+  "held_n": 12,
+  "first_80pct_flips": 160,
+  "first_100pct_flips": null,
+  "final_flips": 192,
+  "final_density": 9.41265060240964e-06,
+  "final_invariants": {
+    "flipped_elems": 192,
+    "total_bit_flips": 192,
+    "max_hamming_per_elem": 1,
+    "exponent_bit_changes": 0,
+    "sign_bit_changes": 0,
+    "rel_l2_norm": 0.006251
+  },
+  "final_held_executed": 10,
+  "final_held_malformed": 2,
+  "final_held_ci": [
+    0.552,
+    0.953
+  ],
+  "cpu_held_executed": 9,
+  "cpu_held_malformed": 3,
+  "cpu_matches_mps": false,
+  "boundary_stats": {
+    "block0": 13,
+    "block1": 0,
+    "final_block": 50,
+    "boundary_share": 0.3281,
+    "block0_share": 0.0677,
+    "final_block_share": 0.2604,
+    "block1_share": 0.0
+  },
+  "controls": {
+    "uniform_1x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "posmatched_1x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "uniform_10x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "posmatched_10x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    }
+  },
+  "trajectory": [
+    {
+      "round": 1,
+      "flips": 32,
+      "density": 1.5687751004016065e-06,
+      "rel_l2_norm": 0.002815,
+      "fit_tf_loss": 3.0509,
+      "fit_exact": 2,
+      "fit_n": 4,
+      "held_forced_tool": 4,
+      "held_exact_arg": 4,
+      "held_executed": 4,
+      "held_malformed": 1,
+      "held_n": 12,
+      "secs": 26.2
+    },
+    {
+      "round": 2,
+      "flips": 64,
+      "density": 3.137550200803213e-06,
+      "rel_l2_norm": 0.003973,
+      "fit_tf_loss": 1.6333,
+      "fit_exact": 1,
+      "fit_n": 4,
+      "held_forced_tool": 3,
+      "held_exact_arg": 3,
+      "held_executed": 3,
+      "held_malformed": 3,
+      "held_n": 12,
+      "secs": 37.5
+    },
+    {
+      "round": 3,
+      "flips": 96,
+      "density": 4.70632530120482e-06,
+      "rel_l2_norm": 0.004441,
+      "fit_tf_loss": 1.0135,
+      "fit_exact": 2,
+      "fit_n": 4,
+      "held_forced_tool": 5,
+      "held_exact_arg": 5,
+      "held_executed": 5,
+      "held_malformed": 7,
+      "held_n": 12,
+      "secs": 51.6
+    },
+    {
+      "round": 4,
+      "flips": 128,
+      "density": 6.275100401606426e-06,
+      "rel_l2_norm": 0.005096,
+      "fit_tf_loss": 0.395,
+      "fit_exact": 3,
+      "fit_n": 4,
+      "held_forced_tool": 9,
+      "held_exact_arg": 9,
+      "held_executed": 9,
+      "held_malformed": 3,
+      "held_n": 12,
+      "secs": 60.9
+    },
+    {
+      "round": 5,
+      "flips": 160,
+      "density": 7.843875502008031e-06,
+      "rel_l2_norm": 0.005704,
+      "fit_tf_loss": 0.1793,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 11,
+      "held_exact_arg": 11,
+      "held_executed": 11,
+      "held_malformed": 1,
+      "held_n": 12,
+      "secs": 70.6
+    },
+    {
+      "round": 6,
+      "flips": 192,
+      "density": 9.41265060240964e-06,
+      "rel_l2_norm": 0.006251,
+      "fit_tf_loss": 0.0625,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 10,
+      "held_exact_arg": 10,
+      "held_executed": 10,
+      "held_malformed": 2,
+      "held_n": 12,
+      "secs": 80.8
+    }
+  ],
+  "total_secs": 232.5
+}

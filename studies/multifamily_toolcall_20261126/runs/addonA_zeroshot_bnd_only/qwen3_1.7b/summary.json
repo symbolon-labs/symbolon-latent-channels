@@ -1,0 +1,208 @@
+{
+  "gate": "addonA_zeroshot_bnd_only",
+  "model_key": "qwen3_1.7b",
+  "model_id": "Qwen/Qwen3-1.7B",
+  "family": "Qwen",
+  "protect_boundary": true,
+  "protect_schema": false,
+  "schema_start_tok": null,
+  "protected_token_count": 32,
+  "protected_fraction": 0.07018,
+  "protected_token_flips": 0,
+  "target_spec": {
+    "tool": "calc",
+    "target_str": "{\"tool\": \"calc\"}"
+  },
+  "target_n_tokens": 6,
+  "n_prefix_tokens": 456,
+  "n_elements": 26148864,
+  "fit_n": 3,
+  "held_n": 6,
+  "first_80pct_flips": 64,
+  "first_100pct_flips": 64,
+  "final_flips": 256,
+  "final_density": 9.790100250626566e-06,
+  "final_invariants": {
+    "flipped_elems": 256,
+    "total_bit_flips": 256,
+    "max_hamming_per_elem": 1,
+    "exponent_bit_changes": 0,
+    "sign_bit_changes": 0,
+    "rel_l2_norm": 0.001835
+  },
+  "final_held_executed": 6,
+  "final_held_malformed": 0,
+  "final_held_ci": [
+    0.6097,
+    1.0
+  ],
+  "cpu_held_executed": 6,
+  "cpu_held_malformed": 0,
+  "cpu_matches_mps": true,
+  "boundary_stats": {
+    "block0": 0,
+    "block1": 2,
+    "final_block": 0,
+    "boundary_share": 0.0,
+    "block0_share": 0.0,
+    "final_block_share": 0.0,
+    "block1_share": 0.0078
+  },
+  "controls": {
+    "uniform_1x": {
+      "executed": 0,
+      "total": 30,
+      "ci": [
+        0.0,
+        0.1135
+      ]
+    },
+    "posmatched_1x": {
+      "executed": 0,
+      "total": 30,
+      "ci": [
+        0.0,
+        0.1135
+      ]
+    },
+    "uniform_10x": {
+      "executed": 0,
+      "total": 30,
+      "ci": [
+        0.0,
+        0.1135
+      ]
+    },
+    "posmatched_10x": {
+      "executed": 0,
+      "total": 30,
+      "ci": [
+        0.0,
+        0.1135
+      ]
+    }
+  },
+  "trajectory": [
+    {
+      "round": 1,
+      "flips": 32,
+      "density": 1.2237625313283207e-06,
+      "rel_l2_norm": 0.000707,
+      "fit_tf_loss": 5.5657,
+      "fit_exact": 1,
+      "fit_n": 3,
+      "held_forced_tool": 2,
+      "held_exact_arg": 2,
+      "held_executed": 2,
+      "held_malformed": 0,
+      "held_n": 6,
+      "secs": 23.1
+    },
+    {
+      "round": 2,
+      "flips": 64,
+      "density": 2.4475250626566415e-06,
+      "rel_l2_norm": 0.000939,
+      "fit_tf_loss": 2.4439,
+      "fit_exact": 3,
+      "fit_n": 3,
+      "held_forced_tool": 6,
+      "held_exact_arg": 6,
+      "held_executed": 6,
+      "held_malformed": 0,
+      "held_n": 6,
+      "secs": 28.2
+    },
+    {
+      "round": 3,
+      "flips": 96,
+      "density": 3.671287593984962e-06,
+      "rel_l2_norm": 0.001118,
+      "fit_tf_loss": 2.0087,
+      "fit_exact": 3,
+      "fit_n": 3,
+      "held_forced_tool": 6,
+      "held_exact_arg": 6,
+      "held_executed": 6,
+      "held_malformed": 0,
+      "held_n": 6,
+      "secs": 33.3
+    },
+    {
+      "round": 4,
+      "flips": 128,
+      "density": 4.895050125313283e-06,
+      "rel_l2_norm": 0.00125,
+      "fit_tf_loss": 1.5087,
+      "fit_exact": 3,
+      "fit_n": 3,
+      "held_forced_tool": 6,
+      "held_exact_arg": 6,
+      "held_executed": 6,
+      "held_malformed": 0,
+      "held_n": 6,
+      "secs": 38.4
+    },
+    {
+      "round": 5,
+      "flips": 160,
+      "density": 6.118812656641604e-06,
+      "rel_l2_norm": 0.001399,
+      "fit_tf_loss": 1.1113,
+      "fit_exact": 2,
+      "fit_n": 3,
+      "held_forced_tool": 6,
+      "held_exact_arg": 6,
+      "held_executed": 6,
+      "held_malformed": 0,
+      "held_n": 6,
+      "secs": 44.2
+    },
+    {
+      "round": 6,
+      "flips": 192,
+      "density": 7.342575187969924e-06,
+      "rel_l2_norm": 0.001508,
+      "fit_tf_loss": 0.8918,
+      "fit_exact": 3,
+      "fit_n": 3,
+      "held_forced_tool": 6,
+      "held_exact_arg": 6,
+      "held_executed": 6,
+      "held_malformed": 0,
+      "held_n": 6,
+      "secs": 49.3
+    },
+    {
+      "round": 7,
+      "flips": 224,
+      "density": 8.566337719298245e-06,
+      "rel_l2_norm": 0.001676,
+      "fit_tf_loss": 0.2943,
+      "fit_exact": 3,
+      "fit_n": 3,
+      "held_forced_tool": 6,
+      "held_exact_arg": 6,
+      "held_executed": 6,
+      "held_malformed": 0,
+      "held_n": 6,
+      "secs": 54.1
+    },
+    {
+      "round": 8,
+      "flips": 256,
+      "density": 9.790100250626566e-06,
+      "rel_l2_norm": 0.001835,
+      "fit_tf_loss": 0.0993,
+      "fit_exact": 3,
+      "fit_n": 3,
+      "held_forced_tool": 6,
+      "held_exact_arg": 6,
+      "held_executed": 6,
+      "held_malformed": 0,
+      "held_n": 6,
+      "secs": 59.2
+    }
+  ],
+  "total_secs": 137.7
+}

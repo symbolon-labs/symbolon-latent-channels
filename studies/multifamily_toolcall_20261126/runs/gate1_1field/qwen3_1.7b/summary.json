@@ -1,0 +1,190 @@
+{
+  "gate": "gate1_1field",
+  "model_key": "qwen3_1.7b",
+  "model_id": "Qwen/Qwen3-1.7B",
+  "family": "Qwen",
+  "protect_boundary": false,
+  "protected_fraction": 0.0,
+  "protected_token_flips": 0,
+  "target_spec": {
+    "tool": "calc",
+    "target_str": "{\"tool\": \"calc\"}"
+  },
+  "target_n_tokens": 6,
+  "n_prefix_tokens": 483,
+  "n_elements": 27697152,
+  "fit_n": 4,
+  "held_n": 12,
+  "first_80pct_flips": 96,
+  "first_100pct_flips": 96,
+  "final_flips": 224,
+  "final_density": 8.087474120082816e-06,
+  "final_invariants": {
+    "flipped_elems": 224,
+    "total_bit_flips": 224,
+    "max_hamming_per_elem": 1,
+    "exponent_bit_changes": 0,
+    "sign_bit_changes": 0,
+    "rel_l2_norm": 0.002512
+  },
+  "final_held_executed": 11,
+  "final_held_malformed": 0,
+  "final_held_ci": [
+    0.6461,
+    0.9851
+  ],
+  "cpu_held_executed": 11,
+  "cpu_held_malformed": 0,
+  "cpu_matches_mps": true,
+  "boundary_stats": {
+    "block0": 161,
+    "block1": 0,
+    "final_block": 16,
+    "boundary_share": 0.7902,
+    "block0_share": 0.7188,
+    "final_block_share": 0.0714,
+    "block1_share": 0.0
+  },
+  "controls": {
+    "uniform_1x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "posmatched_1x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "uniform_10x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "posmatched_10x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    }
+  },
+  "trajectory": [
+    {
+      "round": 1,
+      "flips": 32,
+      "density": 1.1553534457261164e-06,
+      "rel_l2_norm": 0.001049,
+      "fit_tf_loss": 5.0517,
+      "fit_exact": 0,
+      "fit_n": 4,
+      "held_forced_tool": 1,
+      "held_exact_arg": 1,
+      "held_executed": 1,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 20.1
+    },
+    {
+      "round": 2,
+      "flips": 64,
+      "density": 2.310706891452233e-06,
+      "rel_l2_norm": 0.001441,
+      "fit_tf_loss": 2.2314,
+      "fit_exact": 0,
+      "fit_n": 4,
+      "held_forced_tool": 2,
+      "held_exact_arg": 2,
+      "held_executed": 2,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 27.4
+    },
+    {
+      "round": 3,
+      "flips": 96,
+      "density": 3.4660603371783497e-06,
+      "rel_l2_norm": 0.001746,
+      "fit_tf_loss": 1.4672,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 12,
+      "held_exact_arg": 12,
+      "held_executed": 12,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 34.6
+    },
+    {
+      "round": 4,
+      "flips": 128,
+      "density": 4.621413782904466e-06,
+      "rel_l2_norm": 0.001987,
+      "fit_tf_loss": 0.906,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 12,
+      "held_exact_arg": 12,
+      "held_executed": 12,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 41.9
+    },
+    {
+      "round": 5,
+      "flips": 160,
+      "density": 5.776767228630583e-06,
+      "rel_l2_norm": 0.002202,
+      "fit_tf_loss": 0.4694,
+      "fit_exact": 3,
+      "fit_n": 4,
+      "held_forced_tool": 10,
+      "held_exact_arg": 10,
+      "held_executed": 10,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 49.5
+    },
+    {
+      "round": 6,
+      "flips": 192,
+      "density": 6.9321206743566995e-06,
+      "rel_l2_norm": 0.002392,
+      "fit_tf_loss": 0.6708,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 12,
+      "held_exact_arg": 12,
+      "held_executed": 12,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 57.1
+    },
+    {
+      "round": 7,
+      "flips": 224,
+      "density": 8.087474120082816e-06,
+      "rel_l2_norm": 0.002512,
+      "fit_tf_loss": 0.1067,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 11,
+      "held_exact_arg": 11,
+      "held_executed": 11,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 64.7
+    }
+  ],
+  "total_secs": 163.7
+}

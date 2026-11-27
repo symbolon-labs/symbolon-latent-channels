@@ -1,0 +1,193 @@
+{
+  "gate": "gate3a_boundary_only",
+  "model_key": "granite_3.3_2b",
+  "model_id": "ibm-granite/granite-3.3-2b-instruct",
+  "family": "Granite",
+  "protect_boundary": true,
+  "protect_schema": false,
+  "schema_start_tok": null,
+  "protected_token_count": 32,
+  "protected_fraction": 0.06426,
+  "protected_token_flips": 0,
+  "target_spec": {
+    "tool": "calc",
+    "target_str": "{\"tool\": \"calc\"}"
+  },
+  "target_n_tokens": 6,
+  "n_prefix_tokens": 498,
+  "n_elements": 20398080,
+  "fit_n": 4,
+  "held_n": 12,
+  "first_80pct_flips": 160,
+  "first_100pct_flips": 192,
+  "final_flips": 224,
+  "final_density": 1.0981425702811246e-05,
+  "final_invariants": {
+    "flipped_elems": 224,
+    "total_bit_flips": 224,
+    "max_hamming_per_elem": 1,
+    "exponent_bit_changes": 0,
+    "sign_bit_changes": 0,
+    "rel_l2_norm": 0.00601
+  },
+  "final_held_executed": 12,
+  "final_held_malformed": 0,
+  "final_held_ci": [
+    0.7575,
+    1.0
+  ],
+  "cpu_held_executed": 12,
+  "cpu_held_malformed": 0,
+  "cpu_matches_mps": true,
+  "boundary_stats": {
+    "block0": 0,
+    "block1": 0,
+    "final_block": 0,
+    "boundary_share": 0.0,
+    "block0_share": 0.0,
+    "final_block_share": 0.0,
+    "block1_share": 0.0
+  },
+  "controls": {
+    "uniform_1x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "posmatched_1x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "uniform_10x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    },
+    "posmatched_10x": {
+      "executed": 0,
+      "total": 60,
+      "ci": [
+        0.0,
+        0.0602
+      ]
+    }
+  },
+  "trajectory": [
+    {
+      "round": 1,
+      "flips": 32,
+      "density": 1.5687751004016065e-06,
+      "rel_l2_norm": 0.002839,
+      "fit_tf_loss": 3.0509,
+      "fit_exact": 2,
+      "fit_n": 4,
+      "held_forced_tool": 4,
+      "held_exact_arg": 4,
+      "held_executed": 4,
+      "held_malformed": 2,
+      "held_n": 12,
+      "secs": 23.6
+    },
+    {
+      "round": 2,
+      "flips": 64,
+      "density": 3.137550200803213e-06,
+      "rel_l2_norm": 0.003579,
+      "fit_tf_loss": 1.8594,
+      "fit_exact": 2,
+      "fit_n": 4,
+      "held_forced_tool": 4,
+      "held_exact_arg": 4,
+      "held_executed": 4,
+      "held_malformed": 1,
+      "held_n": 12,
+      "secs": 33.7
+    },
+    {
+      "round": 3,
+      "flips": 96,
+      "density": 4.70632530120482e-06,
+      "rel_l2_norm": 0.004111,
+      "fit_tf_loss": 1.2732,
+      "fit_exact": 2,
+      "fit_n": 4,
+      "held_forced_tool": 6,
+      "held_exact_arg": 6,
+      "held_executed": 6,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 43.0
+    },
+    {
+      "round": 4,
+      "flips": 128,
+      "density": 6.275100401606426e-06,
+      "rel_l2_norm": 0.004703,
+      "fit_tf_loss": 0.6893,
+      "fit_exact": 2,
+      "fit_n": 4,
+      "held_forced_tool": 8,
+      "held_exact_arg": 8,
+      "held_executed": 8,
+      "held_malformed": 2,
+      "held_n": 12,
+      "secs": 52.0
+    },
+    {
+      "round": 5,
+      "flips": 160,
+      "density": 7.843875502008031e-06,
+      "rel_l2_norm": 0.005303,
+      "fit_tf_loss": 0.4274,
+      "fit_exact": 2,
+      "fit_n": 4,
+      "held_forced_tool": 11,
+      "held_exact_arg": 11,
+      "held_executed": 11,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 61.3
+    },
+    {
+      "round": 6,
+      "flips": 192,
+      "density": 9.41265060240964e-06,
+      "rel_l2_norm": 0.005636,
+      "fit_tf_loss": 0.1965,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 12,
+      "held_exact_arg": 12,
+      "held_executed": 12,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 70.6
+    },
+    {
+      "round": 7,
+      "flips": 224,
+      "density": 1.0981425702811246e-05,
+      "rel_l2_norm": 0.00601,
+      "fit_tf_loss": 0.0455,
+      "fit_exact": 4,
+      "fit_n": 4,
+      "held_forced_tool": 12,
+      "held_exact_arg": 12,
+      "held_executed": 12,
+      "held_malformed": 0,
+      "held_n": 12,
+      "secs": 80.0
+    }
+  ],
+  "total_secs": 218.4
+}

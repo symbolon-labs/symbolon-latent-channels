@@ -6,7 +6,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 PY=${PY:-python3}
 
-echo "=== 1. Running 13 fail-closed recounts against ./studies ==="
+echo "=== 1. Running 14 automated recounts against ./studies ==="
 SCRIPTS=(
   verify_directed_bits.py
   verify_sparse_pursuit.py
@@ -21,6 +21,7 @@ SCRIPTS=(
   verify_vision_pixel.py
   verify_codebook_factory.py
   verify_c2c_template.py
+  verify_r12_multifamily_toolcall.py
 )
 
 pass=0
@@ -114,6 +115,9 @@ if "$PY" checks/verify_boundary_defense.py "$tmp/n4" >/dev/null 2>&1; then
 else
   echo "  NEGATIVE_OK: verify_boundary_defense failed closed on protected token flip"
 fi
+
+# Neg 5-7: R.12 negative fault-injection suite (HTTP 401, wrong server_result, protected token flip)
+"$PY" checks/verify_r12_multifamily_toolcall.py --self-test-negative | grep "NEGATIVE_OK"
 
 echo ""
 echo "ALL PUBLIC RECOUNTS AND NEGATIVE TESTS PASSED."
